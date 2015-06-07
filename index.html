@@ -36,19 +36,33 @@
     		float: left;
     		height: 280px;
     		width: 190px;
-    		border-right: 1px solid #EEEEEE;
-    		border-bottom: 1px solid #EEEEEE;
-    		border-left: 1px solid #EEEEEE;
+    		border-right: 1px solid #DDDDDD;
+    		border-bottom: 1px solid #DDDDDD;
+    		border-left: 1px solid #DDDDDD;
+    		text-decoration: none;
+    	}
+
+    	.profileLinkText {
+    		color: #222222;
     	}
 
     	.profileLinkPoster {
     		background-color: #FFFFFF;
     	}
 
+    	.profileLinkUpdatedText {
+    		font-size: 9px;
+    		color: grey;
+    		font-style: italic;
+    	}
+
     	.profileLinkPosterImage {
     		height: 39px;
     		margin: 5px;
+    	}
 
+    	a:hover {
+    		text-decoration: none;
     	}
 
     </style>
@@ -83,13 +97,13 @@
     	</nav>
 
     	<nav class="navbar navbar-default secondaryHeader">
-    		<h1>Digital Inclusion Coordinators</h1>
+    		<h1>Digital Empowerment Community of Austin</h1>
     	</nav>
 
     	<div class="profileLink">
     		<a href="/profile1.html">
 	    		<div><img src="images/Conley_Guerrero_Senior_Activity_Center_image.jpg" class="img-responsive img-rounded" alt="Responsive image"></div>
-	    		<div class="profileLinkPoster"><span>Sharla Chamberlain</span></div>
+	    		<div class="profileLinkPoster"><div class="profileLinkText">Sharla Chamberlain</div><div class="profileLinkUpdatedText">Thursday</div></div>
 	    		<div>
 	    			<img src="images/sharla.jpg" class="img-responsive profileLinkPosterImage" alt="Responsive image">
 	    		</div>
@@ -100,7 +114,7 @@
     	<div class="profileLink">
     		<a href="/profile2.html">
 	    		<div><img src="images/Faulk_Central_Library_image.png" class="img-responsive img-rounded" alt="Responsive image"></div>
-	    		<div class="profileLinkPoster"><span>Sharla Chamberlain</span></div>
+	    		<div class="profileLinkPoster"><div class="profileLinkText">Sharla Chamberlain</div><div class="profileLinkUpdatedText">12 hours ago</div></div>
 	    		<div>
 	    			<img src="images/sharla.jpg" class="img-responsive profileLinkPosterImage" alt="Responsive image">
 	    		</div>
