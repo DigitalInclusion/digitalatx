@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,11 +8,51 @@
     <title>Faulk Central Library</title>
 
     <!-- Bootstrap -->
-    <link href="asset/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+     <style>
+      .mainHeader {
+        margin-bottom: 0;
+      }
+
+      .secondaryHeader {
+        border-bottom: 1px solid grey;
+      }
+
+      .navbar-brand {
+        padding-top: 5px;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .loginButton {
+        margin-top: 8px;
+      }
+
+      .profileLink {
+        margin: 20px;
+        float: left;
+        height: 280px;
+        width: 190px;
+        border-right: 1px solid #EEEEEE;
+        border-bottom: 1px solid #EEEEEE;
+        border-left: 1px solid #EEEEEE;
+      }
+
+      .profileLinkPoster {
+        background-color: #FFFFFF;
+      }
+
+      .profileLinkPosterImage {
+        height: 39px;
+        margin: 5px;
+
+      }
+
     </style>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,18 +60,210 @@
     <![endif]-->
   </head>
   <body>
-    <h2>Faulk Central Library</h2>
-    <ul>
-      <li><b>Organization(s):</b> </li>
-      <li><b>Location:</b> </li>
-      <li><b>Computers available:</b> </li>
-      <li><b>Lab hours:</b> </li>
-      <li><b>Trainer availability:</b> </li>
-      <li><b>Sub-training programs offered:</b> </li>
-      <li><b>Disabled accesibility:</b> </li>
-      <li><b>Public access:</b> </li>
-      <li><b>Contact:</b> </li>
-    </ul>
+     <div class="container">
+      <nav class="navbar navbar-inverse mainHeader">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <img src="public/images/header_icon.png" alt="Brand" class="logo" />
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Lab Profiles<span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Story Telling</a></li>
+              <li><a href="#">Mapping</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><button type="button" class="btn btn-default loginButton">Log in</button></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+      </nav>
+
+ <!--      <nav class="navbar navbar-default secondaryHeader">
+        <h1>Digital Inclusion Coordinators</h1>
+      </nav> -->
+    </div>
+    </div>
+
+   <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>Faulk Central Library</h1>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on June 07, 2015 at 9:00 AM</p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src="public/images/Faulk_Central_Library_image.png" alt="">
+
+                <hr>
+
+                <!-- Post Content -->
+                <p><ul>
+                  <li><b>Organization(s):</b> </li>
+                  <li><b>Location:</b> </li>
+                  <li><b>Computers available:</b> </li>
+                  <li><b>Lab hours:</b> </li>
+                  <li><b>Trainer availability:</b> </li>
+                  <li><b>Sub-training programs offered:</b> </li>
+                  <li><b>Disabled accesibility:</b> </li>
+                  <li><b>Public access:</b> </li>
+                  <li><b>Contact:</b> </li>
+                  </ul>
+                  </p>
+ 
+
+
+                <hr>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Austin Free-Net
+                            <small>May 25, 2015 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Austin Free-Net
+                            <small>May 25, 2015 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <!-- Nested Comment -->
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Austin Free-Net
+                                    <small>May 25, 2015 at 9:30 PM</small>
+                                </h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div>
+                        <!-- End Nested Comment -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2015</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+ 
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
