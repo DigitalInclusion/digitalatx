@@ -47,3 +47,7 @@ node_modules
 ehthumbs.db
 Thumbs.db
 
+######################
+# keys #
+######################
+config/*
