@@ -53,6 +53,10 @@ app.get('/profile2.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'profile2.html'));
 });
 
+app.get('/addLocation.html', function(request, response) {
+  response.sendFile(path.join(__dirname, 'addLocation.html'));
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
