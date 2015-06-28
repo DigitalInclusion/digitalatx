@@ -51,7 +51,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="addLocationModule" ng-controller="addLocationCtrl">{{4 + 3}}{{testVar}}
+  <body ng-app="addLocationModule" ng-controller="addLocationCtrl">
     <div class="container">
     	<nav class="navbar navbar-inverse mainHeader">
     		<div class="container-fluid">
@@ -78,7 +78,13 @@
             <h1>Digital Empowerment Community of Austin</h1>
         </nav>
 
-
+        <form novalidate>
+            Name: <input type="text" ng-model="location.name"></input>
+            <input type="submit" value="submit" ng-click="saveFormData(location)"></input>
+        </form>
+        <pre>location name = {{location.name}}</pre>
+        <pre>location = {{location}}</pre>
+        <pre>form data = {{formData}}</pre>
 
     </div><!-- /.container -->
 
