@@ -41,6 +41,9 @@
         }
 
     </style>
+
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="public/angular_modules/addLocation.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,7 +51,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="addLocationModule" ng-controller="addLocationCtrl">{{4 + 3}}{{testVar}}
     <div class="container">
     	<nav class="navbar navbar-inverse mainHeader">
     		<div class="container-fluid">
@@ -75,54 +78,8 @@
             <h1>Digital Empowerment Community of Austin</h1>
         </nav>
 
-        <form>
-            <div class="form-group">
-                <label for="locationName">Location name</label>
-                <input type="text" class="form-control" id="locationName">
-            </div>
-            <div class="form-group">
-                <label for="streetAddress">Street address</label>
-                <p>Without city or zip, please. Add room or office number if needed.</p>
-                <input type="text" class="form-control" id="streetAddress">
-            </div>
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city">
-            </div>
-            <div class="form-group">
-                <label for="zipCode">Zip code</label>
-                <input type="text" class="form-control" id="zipCode">
-            </div>
-            <div class="form-group">
-                <label>Free parking?</label>
-                <br />
-                <input type="checkbox" /><span> Yes</span>
-                <br />
-                <input type="checkbox" /><span> No</span>
-            </div>
-            <div class="form-group">
-                <label>Bus stops</label>
-                <br />
-                <input type="checkbox" /><span> Within 1 block</span>
-                <br />
-                <input type="checkbox" /><span> Within 5 blocks</span>
-                <br />
-                <input type="checkbox" /><span> Not close</span>
-            </div>
-            <div class="form-group">
-                <label for="specialDirections">Special directions</label>
-                <p>Anything a first-time visitor or program participant would need to know?</p>
-                <textarea class="form-control" id="specialDirections" rows="3" placeholder="special directions"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="accessibleEntrancesLocations">Accessible entrances locations</label>
-                <p>For the differently-abled</p>
-                <textarea class="form-control" id="accessibleEntrancesLocations" rows="3" placeholder="accessible entrance locations"></textarea>
-            </div>
-            <button class="btn btn-success" id="backButton"><< Back</button>
-            <button class="btn btn-success" id="continueButton">Continue >></button>
+        
 
-        </form>
 
     </div><!-- /.container -->
 

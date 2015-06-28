@@ -36,8 +36,8 @@ app.post('/somedata',function(req,res){
 	});
 })
 
-
-
+app.use('/', express.static(__dirname));
+app.use('/public/angular_modules', express.static(__dirname + '/public/angular_modules'));
 app.use('/asset',express.static(__dirname + '/public'));
 app.use('/images',express.static(__dirname + '/public/images'));
 
