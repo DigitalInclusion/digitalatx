@@ -57,6 +57,10 @@ app.get('/addLocation.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'addLocation.html'));
 });
 
+app.post('/addLocation', function(request, response) {
+  console.log('ADD LOCATION POST SUCCESSFUL');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
