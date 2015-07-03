@@ -11,8 +11,7 @@ addLocationModule.controller('addLocationCtrl', function($scope, $http) {
 	};
 
 	$scope.register = function() {
-		$scope.formData = 'register runs';
-		$http.post('/addLocation', $scope).
+		$http.post('/addLocation', {formData: $scope.formData}).
 			success(function(data) {
 
 			}).error(function(err) {
