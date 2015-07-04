@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var mongojs = require('mongojs');
-var db = mongojs(DB_CONNECTION_STRING, ['sites', 'Locations']);
+var db = mongojs(DB_CONNECTION_STRING, ['sites', 'locations']);
 
 
 // db.sites.findOne({
@@ -19,7 +19,8 @@ var db = mongojs(DB_CONNECTION_STRING, ['sites', 'Locations']);
 //    }
 // });
 
-db.Locations.find(function(err, doc) {
+// FIND LOCATIONS
+db.locations.find(function(err, doc) {
   if (err) {
     console.log(err);
   }
@@ -73,7 +74,17 @@ app.use(multer());
 
 app.post('/addLocation', function(request, response) {
   console.log('ADD LOCATION POST SUCCESSFUL');
-  console.log(request.body.formData);
+  console.log(request.body.formData.name);
+  db.locations.insert(request.body.formData, function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    if (doc) {
+      console.log('INSERT SUCCESSFUL', doc);
+    } else {
+      console.log('INSERT FAILED');
+    }
+  });
 });
 
 app.listen(app.get('port'), function() {
