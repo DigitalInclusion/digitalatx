@@ -78,8 +78,139 @@
             <h1>Digital Empowerment Community of Austin</h1>
         </nav>
 
-        <form novalidate>
-            Name: <input type="text" ng-model="location.name"></input>
+        <form class="simple-form" novalidate>
+            Branch/Lab Name: <input type="text" ng-model="location.name"></input>
+            <br />
+            Street Address: <input type="text" ng-model="location.address"></input>
+            <br />
+            Zipcode: <input type="text" ng-model="location.zipcode"></input>
+            <br />
+            Number of Machines: <input type="number" ng-model="location.numberOfMachines"></input>
+            <br />
+            On-Site Trainer (Yes/No):
+            <input type="radio" ng-model="location.onSiteTrainer" value="yes" />Yes
+            <input type="radio" ng-model="location.onSiteTrainer" value="no" />No
+            <br />
+            Paid or Volunteer:
+            <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
+            <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
+            <br />
+            Hours Available: <input type="number" ng-model="location.onSiteTrainerHours"></input>
+            <br />
+            Provided by Organization: <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
+            <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
+            <br />
+
+            Programs at the Location:
+            <br />
+            Program Name: <input type="text" ng-model="location.programName"></input>
+            <br />
+            Provided by Organization:
+            <input type="radio" ng-model="location.programProvidedByOrganization" value="yes" /> Yes
+            <input type="radio" ng-model="location.programProvidedByOrganization" value="no" /> No
+            <br />
+            Program Description: <textarea ng-model="location.programDescription"></textarea>
+            <br />
+
+            Skills Training:
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_basic"></input> Basic Skills
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_microsoftOffice"></input> Microsoft Office
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_email"></input> Email
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_generalWebSearching"></input> General Web Searching
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_resumeDevelopment"></input> Resume Development
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_onlineJobSearches"></input> Online Job Searches
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_aisdParentCloud"></input> AISD Parent Cloud
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_hardware"></input> Hardware
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_software"></input> Software
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_collegePrep"></input> College Prep
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_stem"></input> STEM
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_webDevelopment"></input> Web Development
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_socialConnections"></input> Social Connections
+            <br />
+            <input type="checkbox" ng-model="location.programSkillsTraining_other"></input> Other
+            <br />
+
+            Program website:
+            <input type="url" ng-model="location.programWebsite"></input>
+            <br />
+            Email contact for this program:
+            <input type="email" ng-model="location.programEmail"></input>
+            <br />
+            Program Dates/Hours:
+            <input type="text" ng-model="location.programDatesAndHours"></input>
+            <br />
+            Cost (Free / Low cost or sliding scale / Not free):
+            <br />
+            <input type="radio" ng-model="location.programCost" value="free"></input> Free
+            <br />
+            <input type="radio" ng-model="location.programCost" value="lowCostOrSlidingScale"></input> Low cost or sliding scale
+            <br />
+            <input type="radio" ng-model="location.programCost" value="notFree"></input> Not free
+            <br />
+            Clientele Served [Tags]
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_children"> Children 5-12
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_youth"> Youth 13-18
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_adults"> Adults
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_seniors"> Seniors
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_disabled"> Disabled
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_homeless"> Homeless
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_immigrant"> Immigrant
+            <br />
+            <input type="checkbox" ng-model="location.programClientele_other"> Other
+            <br />
+
+            Status: (Open/Closed)
+            <br />
+            <input type="radio" value="open" ng-model="location.programStatus"></input> Open
+            <br />
+            <input type="radio" value="closed" ng-model="location.programStatus"></input> Closed
+            <br />
+
+            Public Access Status/Restrictions:
+            <br />
+            <textarea ng-model="location.publicAccess"></textarea>
+            <br />
+            Language Capabilities:
+            <input type="text" ng-model="location.languages"></input>
+            <br />
+            Assistive Technology Availability:
+            <input type="text" ng-model="location.assistiveTechnology"></input>
+            <br />
+            Childcare Availability:
+            <textarea ng-model="location.childcare"></textarea>
+            <br />
+            <input type="checkbox" ng-model="location.freeParking"></input> 
+            Free Parking
+            <br />
+            Bus stops:
+            <br />
+            <input type="radio" value="oneBlock" ng-model="location.busStops"></input> Within 1 block
+            <br />
+            <input type="radio" value="fiveBlocks" ng-model="location.busStops"></input> Within 5 blocks
+            <br />
+            <input type="radio" value="notClose" ng-model="location.busStops"></input> Not close
+
+            <br />
             <input type="submit" value="submit" ng-click="saveFormData(location)"></input>
         </form>
         <pre>location name = {{location.name}}</pre>

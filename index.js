@@ -74,7 +74,7 @@ app.use(multer());
 
 app.post('/addLocation', function(request, response) {
   console.log('ADD LOCATION POST SUCCESSFUL');
-  console.log(request.body.formData.name);
+  console.log(request.body.formData);
   db.locations.insert(request.body.formData, function(err, doc) {
     if (err) {
       console.log(err);
