@@ -7,8 +7,9 @@ addLocationModule.controller('addLocationCtrl', function($scope, $http) {
 
 	$scope.programs = [];
 
-	$scope.saveFormData = function(formData) {
-		$scope.formData = angular.copy(formData);
+	$scope.saveFormData = function(location, programs) {
+		location.programs = programs;
+		$scope.formData = angular.copy(location);
 		$scope.register();
 	};
 
