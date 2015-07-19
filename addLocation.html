@@ -100,10 +100,27 @@
             Provided by Organization: <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
             <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
             <br />
+            <br /><br /><br /><br />
+
+
+
+
+
+
 
             Programs at the Location:
             <br />
-            Program Name: <input type="text" ng-model="location.programName"></input>
+            <button ng-click="addProgram()">Add Program</button>
+
+            <div ng-repeat="program in programs">
+                Program Name: <input type="text" ng-model="program.programName"></input>
+                <br />
+            </div>
+
+            
+            <pre>programs = {{programs}}</pre>
+
+
             <br />
             Provided by Organization:
             <input type="radio" ng-model="location.programProvidedByOrganization" value="yes" /> Yes
@@ -213,7 +230,7 @@
             <br />
             <input type="submit" value="submit" ng-click="saveFormData(location)"></input>
         </form>
-        <pre>location name = {{location.name}}</pre>
+        <pre>programs = {{programs}}</pre>
         <pre>location = {{location}}</pre>
         <pre>form data = {{formData}}</pre>
 
