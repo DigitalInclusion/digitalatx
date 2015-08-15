@@ -3,21 +3,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var mongojs = require('mongojs');
-var db = mongojs(DB_CONNECTION_STRING, ['sites', 'locations']);
-
-
-// db.sites.findOne({
-//     "_id": "paulcarroll"
-// },function(err, docs) {
-//    if(err){
-//    	console.log(err);
-//    }
-//    if (docs) {
-//    	console.log('DB CONNECTION ESTABLISHED', docs);
-//    } else {
-//    	console.log('DB CONNECTION FAIL');
-//    }
-// });
+var db = mongojs(DB_CONNECTION_STRING, ['locations']);
 
 // FIND LOCATIONS
 db.locations.find(function(err, doc) {
@@ -33,16 +19,6 @@ db.locations.find(function(err, doc) {
 
 
 app.set('port', (process.env.PORT || 5000));
-
-app.post('/somedata',function(req,res){
-	db.sites.insert({gender:'F'},function(err,doc){
-		if(!err){
-			res.json({ok:true});
-		} else {
-			res.json({ok:false, err:err});
-		}
-	});
-})
 
 app.use('/', express.static(__dirname));
 app.use('/public/angular_modules', express.static(__dirname + '/public/angular_modules'));
