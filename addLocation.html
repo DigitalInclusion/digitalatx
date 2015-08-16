@@ -28,6 +28,7 @@
             height: 70px;
             padding-top: 5px;
             padding-bottom: 5px;
+            padding-left: 5px;
             display: inline;
             float: left;
         }
@@ -42,12 +43,12 @@
 
         .title {
             display: inline;
-            font-size: 40px;
+            font-size: 35px;
+            line-height: 35px;
+            float: left;
+            padding-top: 5px;
             padding-left: 15px;
-        }
-
-        .secondaryHeader {
-            border-bottom: 1px solid grey;
+            max-width: 70%;
         }
 
         .loginContainer {
@@ -61,13 +62,33 @@
             border-radius: 6px;
         }
 
-        #backButton {
-            margin-right: 20px;
-            margin-bottom: 30px;
+        .secondHeader {
+            height: 30px;
+            background-color: #27AAE0;
+            font-size: 18px;
         }
 
-        #continueButton {
-            margin-bottom: 30px;
+        .secondHeaderLink {
+            float: left;
+            padding-top: 4px;
+            padding-left: 50px;
+        }
+
+        .secondHeaderLink a {
+            color: white;
+        }
+
+        .homeLinkContainer {
+            position: relative;
+            padding-right: 20%;
+        }
+
+        .labProfilesLinkContainer {
+            position: relative;
+        }
+
+        .storytellingProfilesLinkContainer {
+            position: relative;
         }
 
     </style>
@@ -83,7 +104,7 @@
   </head>
   <body ng-app="addLocationModule" ng-controller="addLocationCtrl">
     <div class="container-fluid">
-        <div class="mainHeader"> <!-- main header -->
+        <div class="mainHeader"> <!-- MAIN HEADER -->
             <div class="logoContainer">
                 <a class="logoLink" href="/">
                     <img src="images/header_icon.png" alt="Brand" class="logo" />
@@ -95,39 +116,29 @@
             <div class="loginContainer">
                 <div class="loginButton">LOGIN</div>
             </div>
-        </div> <!-- main header -->
+        </div> <!-- MAIN HEADER -->
 
-        <div class="secondaryHeader">
-
-        </div>
-
-    	<nav class="navbar navbar-inverse"> <!-- bootstrap header -->
-    		<div class="container-fluid">
-    			<div class="navbar-header">
-    				<a class="navbar-brand" href="/">
-    					<img src="images/header_icon.png" alt="Brand" class="logo" />
-    				</a>
-    			</div>
-    			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    			  
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">Lab Profiles<span class="sr-only">(current)</span></a></li>
-			        <li><a href="#">Story Telling</a></li>
-			        <li><a href="#">Mapping</a></li>
-			      </ul>
-
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><button type="button" class="btn btn-default loginButton">Log in</button></li>
-			    </div><!-- /.navbar-collapse -->
-    		</div>
-    	</nav> <!-- bootstrap header -->
-
-        <nav class="navbar navbar-default secondaryHeader"> <!-- bootstrap second header -->
-            <h1>Digital Empowerment Community of Austin</h1>
-        </nav> <!-- bootstrap second header -->
+        <div class="secondHeader"> <!-- SECOND HEADER -->
+            <div class="homeLinkContainer secondHeaderLink">
+                <a href="/home">
+                    HOME
+                </a>
+            </div>
+            <div class="labProfilesLinkContainer secondHeaderLink">
+                <a href="/labProfiles">
+                    LAB PROFILES
+                </a>
+            </div>
+            <div class="storytellingProfilesLinkContainer secondHeaderLink">
+                <a href="/storytelling">
+                    STORYTELLING
+                </a>
+            </div>
+        </div> <!-- SECOND HEADER -->
 
         <form class="simple-form" novalidate>
-            Branch/Lab Name: <input type="text" ng-model="location.name"></input>
+            <div class="fieldLabel">Location Name:</div>
+            <input type="text" ng-model="location.name"></input>
             <br />
             Street Address: <input type="text" ng-model="location.address"></input>
             <br />
