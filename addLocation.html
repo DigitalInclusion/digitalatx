@@ -11,25 +11,55 @@
     <link href="asset/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    	.mainHeader {
-    		margin-bottom: 0;
-    	}
+        body {
+            color: #005581;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        .mainHeader {
+            height: 80px;
+            background-color: #93D4EF;
+        }
+
+        .logoContainer {
+            height: 70px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            display: inline;
+            float: left;
+        }
+
+        .logoLink {
+            height: 70px;
+        }
+
+        .logo {
+            height: 70px;
+        }
+
+        .title {
+            display: inline;
+            font-size: 40px;
+            padding-left: 15px;
+        }
 
         .secondaryHeader {
             border-bottom: 1px solid grey;
         }
 
-    	.navbar-brand {
-    		padding-top: 5px;
-    	}
+        .loginContainer {
+            float: right;
+            padding: 10px 10px 0 0;
+        }
 
-    	.logo {
-    		height: 40px;
-    	}
-
-    	.loginButton {
-    		margin-top: 8px;
-    	}
+        .loginButton {
+            padding: 5px 12px;
+            background-color: white;
+            border-radius: 6px;
+        }
 
         #backButton {
             margin-right: 20px;
@@ -52,8 +82,26 @@
     <![endif]-->
   </head>
   <body ng-app="addLocationModule" ng-controller="addLocationCtrl">
-    <div class="container">
-    	<nav class="navbar navbar-inverse mainHeader">
+    <div class="container-fluid">
+        <div class="mainHeader"> <!-- main header -->
+            <div class="logoContainer">
+                <a class="logoLink" href="/">
+                    <img src="images/header_icon.png" alt="Brand" class="logo" />
+                </a>
+            </div>
+            <div class="title">
+                DIGITAL EMPOWERMENT COMMUNITY OF AUSTIN
+            </div>
+            <div class="loginContainer">
+                <div class="loginButton">LOGIN</div>
+            </div>
+        </div> <!-- main header -->
+
+        <div class="secondaryHeader">
+
+        </div>
+
+    	<nav class="navbar navbar-inverse"> <!-- bootstrap header -->
     		<div class="container-fluid">
     			<div class="navbar-header">
     				<a class="navbar-brand" href="/">
@@ -72,11 +120,11 @@
 			        <li><button type="button" class="btn btn-default loginButton">Log in</button></li>
 			    </div><!-- /.navbar-collapse -->
     		</div>
-    	</nav>
+    	</nav> <!-- bootstrap header -->
 
-        <nav class="navbar navbar-default secondaryHeader">
+        <nav class="navbar navbar-default secondaryHeader"> <!-- bootstrap second header -->
             <h1>Digital Empowerment Community of Austin</h1>
-        </nav>
+        </nav> <!-- bootstrap second header -->
 
         <form class="simple-form" novalidate>
             Branch/Lab Name: <input type="text" ng-model="location.name"></input>
