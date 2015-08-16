@@ -91,6 +91,20 @@
             position: relative;
         }
 
+        .simple-form {
+            padding-left: 15px;
+        }
+
+        .fieldLabel {
+            padding-top: 10px;
+        }
+
+        .fieldInput {
+            border-color: #005581;
+            border-radius: 8px;
+            border-width: 1px;
+        }
+
     </style>
 
     <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
@@ -138,25 +152,30 @@
 
         <form class="simple-form" novalidate>
             <div class="fieldLabel">Location Name:</div>
-            <input type="text" ng-model="location.name"></input>
+            <input type="text" class="fieldInput" ng-model="location.name"></input>
             <br />
-            Street Address: <input type="text" ng-model="location.address"></input>
+            <div class="fieldLabel">Street Address:</div>
+            <input type="text" class="fieldInput" ng-model="location.address"></input>
             <br />
-            Zipcode: <input type="text" ng-model="location.zipcode"></input>
+            <div class="fieldLabel">Zipcode:</div>
+            <input type="text" class="fieldInput" ng-model="location.zipcode"></input>
             <br />
-            Number of Machines: <input type="number" ng-model="location.numberOfMachines"></input>
+            <div class="fieldLabel">Number of Machines:</div> 
+            <input type="number" class="fieldInput" ng-model="location.numberOfMachines"></input>
             <br />
-            On-Site Trainer (Yes/No):
+            <div class="fieldLabel">On-Site Trainer (Yes/No):</div>
             <input type="radio" ng-model="location.onSiteTrainer" value="yes" />Yes
             <input type="radio" ng-model="location.onSiteTrainer" value="no" />No
             <br />
-            Paid or Volunteer:
+            <div class="fieldLabel">Paid or Volunteer:</div>
             <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
             <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
             <br />
-            Hours Available: <input type="number" ng-model="location.onSiteTrainerHours"></input>
+            <div class="fieldLabel">Hours Available:</div>
+            <input type="number" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
             <br />
-            Provided by Organization: <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
+            <div class="fieldLabel">Provided by Organization:</div>
+            <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
             <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
             <br />
 
@@ -165,18 +184,17 @@
             <button ng-click="addProgram()">Add Program</button>
 
             <div ng-repeat="program in programs">
-                Program Name: <input type="text" ng-model="program.programName"></input>
+                <div class="fieldLabel">Program Name:</div>
+                <input type="text" class="fieldInput" ng-model="program.programName"></input>
                 <br />
-                <br />
-                Provided by Organization:
+                <div class="fieldLabel">Provided by Organization:</div>
                 <input type="radio" ng-model="program.programProvidedByOrganization" value="yes" /> Yes
                 <input type="radio" ng-model="program.programProvidedByOrganization" value="no" /> No
                 <br />
-                Program Description: <textarea ng-model="program.programDescription"></textarea>
+                <div class="fieldLabel">Program Description:</div>
+                <textarea class="fieldInput" ng-model="program.programDescription"></textarea>
                 <br />
-
-                Skills Training:
-                <br />
+                <div class="fieldLabel">Skills Training:</div>
                 <input type="checkbox" ng-model="program.programSkillsTraining_basic"></input> Basic Skills
                 <br />
                 <input type="checkbox" ng-model="program.programSkillsTraining_microsoftOffice"></input> Microsoft Office
@@ -206,25 +224,23 @@
                 <input type="checkbox" ng-model="program.programSkillsTraining_other"></input> Other
                 <br />
 
-                Program website:
-                <input type="url" ng-model="program.programWebsite"></input>
+                <div class="fieldLabel">Program website:</div>
+                <input type="url" class="fieldInput" ng-model="program.programWebsite"></input>
                 <br />
-                Email contact for this program:
-                <input type="email" ng-model="program.programEmail"></input>
+                <div class="fieldLabel">Email contact for this program:</div>
+                <input type="email" class="fieldInput" ng-model="program.programEmail"></input>
                 <br />
-                Program Dates/Hours:
-                <input type="text" ng-model="program.programDatesAndHours"></input>
+                <div class="fieldLabel">Program Dates/Hours:</div>
+                <input type="text" class="fieldInput" ng-model="program.programDatesAndHours"></input>
                 <br />
-                Cost (Free / Low cost or sliding scale / Not free):
-                <br />
+                <div class="fieldLabel">Cost (Free / Low cost or sliding scale / Not free):</div>
                 <input type="radio" ng-model="program.programCost" value="free"></input> Free
                 <br />
                 <input type="radio" ng-model="program.programCost" value="lowCostOrSlidingScale"></input> Low cost or sliding scale
                 <br />
                 <input type="radio" ng-model="program.programCost" value="notFree"></input> Not free
                 <br />
-                Clientele Served [Tags]
-                <br />
+                <div class="fieldLabel">Clientele Served [Tags]</div>
                 <input type="checkbox" ng-model="program.programClientele_children"> Children 5-12
                 <br />
                 <input type="checkbox" ng-model="program.programClientele_youth"> Youth 13-18
@@ -246,31 +262,27 @@
             
             <pre>programs = {{programs}}</pre>
 
-            Status: (Open/Closed)
-            <br />
+            <div class="fieldLabel">Status: (Open/Closed)</div>
             <input type="radio" value="open" ng-model="location.programStatus"></input> Open
             <br />
             <input type="radio" value="closed" ng-model="location.programStatus"></input> Closed
             <br />
 
-            Public Access Status/Restrictions:
+            <div class="fieldLabel">Public Access Status/Restrictions:</div>
+            <textarea class="fieldInput" ng-model="location.publicAccess"></textarea>
             <br />
-            <textarea ng-model="location.publicAccess"></textarea>
+            <div class="fieldLabel">Language Capabilities:</div>
+            <input type="text" class="fieldInput" ng-model="location.languages"></input>
             <br />
-            Language Capabilities:
-            <input type="text" ng-model="location.languages"></input>
+            <div class="fieldLabel">Assistive Technology Availability:</div>
+            <input type="text" class="fieldInput" ng-model="location.assistiveTechnology"></input>
             <br />
-            Assistive Technology Availability:
-            <input type="text" ng-model="location.assistiveTechnology"></input>
+            <div class="fieldLabel">Childcare Availability:</div>
+            <textarea class="fieldInput" ng-model="location.childcare"></textarea>
             <br />
-            Childcare Availability:
-            <textarea ng-model="location.childcare"></textarea>
+            <input type="checkbox" ng-model="location.freeParking"></input> Free Parking
             <br />
-            <input type="checkbox" ng-model="location.freeParking"></input> 
-            Free Parking
-            <br />
-            Bus stops:
-            <br />
+            <div class="fieldLabel">Bus stops:</div>
             <input type="radio" value="oneBlock" ng-model="location.busStops"></input> Within 1 block
             <br />
             <input type="radio" value="fiveBlocks" ng-model="location.busStops"></input> Within 5 blocks
