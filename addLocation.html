@@ -95,6 +95,16 @@
             padding-left: 15px;
         }
 
+        #locationFields {
+            width: 50%;
+            float: left;
+        }
+
+        #programFields {
+            width: 50%;
+            float: left;
+        }
+
         .fieldLabel {
             padding-top: 10px;
         }
@@ -151,146 +161,153 @@
         </div> <!-- SECOND HEADER -->
 
         <form class="simple-form" novalidate>
-            <div class="fieldLabel">Location Name:</div>
-            <input type="text" class="fieldInput" ng-model="location.name"></input>
-            <br />
-            <div class="fieldLabel">Street Address:</div>
-            <input type="text" class="fieldInput" ng-model="location.address"></input>
-            <br />
-            <div class="fieldLabel">Zipcode:</div>
-            <input type="text" class="fieldInput" ng-model="location.zipcode"></input>
-            <br />
-            <div class="fieldLabel">Number of Machines:</div> 
-            <input type="number" class="fieldInput" ng-model="location.numberOfMachines"></input>
-            <br />
-            <div class="fieldLabel">On-Site Trainer (Yes/No):</div>
-            <input type="radio" ng-model="location.onSiteTrainer" value="yes" />Yes
-            <input type="radio" ng-model="location.onSiteTrainer" value="no" />No
-            <br />
-            <div class="fieldLabel">Paid or Volunteer:</div>
-            <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
-            <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
-            <br />
-            <div class="fieldLabel">Hours Available:</div>
-            <input type="number" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
-            <br />
-            <div class="fieldLabel">Provided by Organization:</div>
-            <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
-            <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
-            <br />
+            <div id="locationFields">
 
-            Programs at the Location:
-            <br />
-            <button ng-click="addProgram()">Add Program</button>
 
-            <div ng-repeat="program in programs">
-                <div class="fieldLabel">Program Name:</div>
-                <input type="text" class="fieldInput" ng-model="program.programName"></input>
+                <div class="fieldLabel">Location Name:</div>
+                <input type="text" class="fieldInput" ng-model="location.name"></input>
+                <br />
+                <div class="fieldLabel">Street Address:</div>
+                <input type="text" class="fieldInput" ng-model="location.address"></input>
+                <br />
+                <div class="fieldLabel">Zipcode:</div>
+                <input type="text" class="fieldInput" ng-model="location.zipcode"></input>
+                <br />
+                <div class="fieldLabel">Number of Machines:</div> 
+                <input type="number" class="fieldInput" ng-model="location.numberOfMachines"></input>
+                <br />
+                <div class="fieldLabel">On-Site Trainer (Yes/No):</div>
+                <input type="radio" ng-model="location.onSiteTrainer" value="yes" />Yes
+                <input type="radio" ng-model="location.onSiteTrainer" value="no" />No
+                <br />
+                <div class="fieldLabel">Paid or Volunteer:</div>
+                <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
+                <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
+                <br />
+                <div class="fieldLabel">Hours Available:</div>
+                <input type="number" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
                 <br />
                 <div class="fieldLabel">Provided by Organization:</div>
-                <input type="radio" ng-model="program.programProvidedByOrganization" value="yes" /> Yes
-                <input type="radio" ng-model="program.programProvidedByOrganization" value="no" /> No
+                <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
+                <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
                 <br />
-                <div class="fieldLabel">Program Description:</div>
-                <textarea class="fieldInput" ng-model="program.programDescription"></textarea>
+                <div class="fieldLabel">Status: (Open/Closed)</div>
+                <input type="radio" value="open" ng-model="location.programStatus"></input> Open
                 <br />
-                <div class="fieldLabel">Skills Training:</div>
-                <input type="checkbox" ng-model="program.programSkillsTraining_basic"></input> Basic Skills
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_microsoftOffice"></input> Microsoft Office
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_email"></input> Email
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_generalWebSearching"></input> General Web Searching
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_resumeDevelopment"></input> Resume Development
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_onlineJobSearches"></input> Online Job Searches
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_aisdParentCloud"></input> AISD Parent Cloud
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_hardware"></input> Hardware
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_software"></input> Software
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_collegePrep"></input> College Prep
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_stem"></input> STEM
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_webDevelopment"></input> Web Development
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_socialConnections"></input> Social Connections
-                <br />
-                <input type="checkbox" ng-model="program.programSkillsTraining_other"></input> Other
+                <input type="radio" value="closed" ng-model="location.programStatus"></input> Closed
                 <br />
 
-                <div class="fieldLabel">Program website:</div>
-                <input type="url" class="fieldInput" ng-model="program.programWebsite"></input>
+                <div class="fieldLabel">Public Access Status/Restrictions:</div>
+                <textarea class="fieldInput" ng-model="location.publicAccess"></textarea>
                 <br />
-                <div class="fieldLabel">Email contact for this program:</div>
-                <input type="email" class="fieldInput" ng-model="program.programEmail"></input>
+                <div class="fieldLabel">Language Capabilities:</div>
+                <input type="text" class="fieldInput" ng-model="location.languages"></input>
                 <br />
-                <div class="fieldLabel">Program Dates/Hours:</div>
-                <input type="text" class="fieldInput" ng-model="program.programDatesAndHours"></input>
+                <div class="fieldLabel">Assistive Technology Availability:</div>
+                <input type="text" class="fieldInput" ng-model="location.assistiveTechnology"></input>
                 <br />
-                <div class="fieldLabel">Cost (Free / Low cost or sliding scale / Not free):</div>
-                <input type="radio" ng-model="program.programCost" value="free"></input> Free
+                <div class="fieldLabel">Childcare Availability:</div>
+                <textarea class="fieldInput" ng-model="location.childcare"></textarea>
                 <br />
-                <input type="radio" ng-model="program.programCost" value="lowCostOrSlidingScale"></input> Low cost or sliding scale
+                <input type="checkbox" ng-model="location.freeParking"></input> Free Parking
                 <br />
-                <input type="radio" ng-model="program.programCost" value="notFree"></input> Not free
+                <div class="fieldLabel">Bus stops:</div>
+                <input type="radio" value="oneBlock" ng-model="location.busStops"></input> Within 1 block
                 <br />
-                <div class="fieldLabel">Clientele Served [Tags]</div>
-                <input type="checkbox" ng-model="program.programClientele_children"> Children 5-12
+                <input type="radio" value="fiveBlocks" ng-model="location.busStops"></input> Within 5 blocks
                 <br />
-                <input type="checkbox" ng-model="program.programClientele_youth"> Youth 13-18
+                <input type="radio" value="notClose" ng-model="location.busStops"></input> Not close
                 <br />
-                <input type="checkbox" ng-model="program.programClientele_adults"> Adults
+                <input type="submit" value="submit" class="submitButton" ng-click="saveFormData(location, programs)"></input>
+            </div> <!-- LOCATION FIELDS -->
+
+            <div id="programFields">
+                Programs at the Location:
                 <br />
-                <input type="checkbox" ng-model="program.programClientele_seniors"> Seniors
-                <br />
-                <input type="checkbox" ng-model="program.programClientele_disabled"> Disabled
-                <br />
-                <input type="checkbox" ng-model="program.programClientele_homeless"> Homeless
-                <br />
-                <input type="checkbox" ng-model="program.programClientele_immigrant"> Immigrant
-                <br />
-                <input type="checkbox" ng-model="program.programClientele_other"> Other
-                <br />
-                <hr />
-            </div>
+                <button ng-click="addProgram()">Add Program</button>
+
+                <div ng-repeat="program in programs">
+                    <div class="fieldLabel">Program Name:</div>
+                    <input type="text" class="fieldInput" ng-model="program.programName"></input>
+                    <br />
+                    <div class="fieldLabel">Provided by Organization:</div>
+                    <input type="radio" ng-model="program.programProvidedByOrganization" value="yes" /> Yes
+                    <input type="radio" ng-model="program.programProvidedByOrganization" value="no" /> No
+                    <br />
+                    <div class="fieldLabel">Program Description:</div>
+                    <textarea class="fieldInput" ng-model="program.programDescription"></textarea>
+                    <br />
+                    <div class="fieldLabel">Skills Training:</div>
+                    <input type="checkbox" ng-model="program.programSkillsTraining_basic"></input> Basic Skills
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_microsoftOffice"></input> Microsoft Office
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_email"></input> Email
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_generalWebSearching"></input> General Web Searching
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_resumeDevelopment"></input> Resume Development
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_onlineJobSearches"></input> Online Job Searches
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_aisdParentCloud"></input> AISD Parent Cloud
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_hardware"></input> Hardware
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_software"></input> Software
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_collegePrep"></input> College Prep
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_stem"></input> STEM
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_webDevelopment"></input> Web Development
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_socialConnections"></input> Social Connections
+                    <br />
+                    <input type="checkbox" ng-model="program.programSkillsTraining_other"></input> Other
+                    <br />
+
+                    <div class="fieldLabel">Program website:</div>
+                    <input type="url" class="fieldInput" ng-model="program.programWebsite"></input>
+                    <br />
+                    <div class="fieldLabel">Email contact for this program:</div>
+                    <input type="email" class="fieldInput" ng-model="program.programEmail"></input>
+                    <br />
+                    <div class="fieldLabel">Program Dates/Hours:</div>
+                    <input type="text" class="fieldInput" ng-model="program.programDatesAndHours"></input>
+                    <br />
+                    <div class="fieldLabel">Cost (Free / Low cost or sliding scale / Not free):</div>
+                    <input type="radio" ng-model="program.programCost" value="free"></input> Free
+                    <br />
+                    <input type="radio" ng-model="program.programCost" value="lowCostOrSlidingScale"></input> Low cost or sliding scale
+                    <br />
+                    <input type="radio" ng-model="program.programCost" value="notFree"></input> Not free
+                    <br />
+                    <div class="fieldLabel">Clientele Served [Tags]</div>
+                    <input type="checkbox" ng-model="program.programClientele_children"> Children 5-12
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_youth"> Youth 13-18
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_adults"> Adults
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_seniors"> Seniors
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_disabled"> Disabled
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_homeless"> Homeless
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_immigrant"> Immigrant
+                    <br />
+                    <input type="checkbox" ng-model="program.programClientele_other"> Other
+                    <br />
+                    <hr />
+                </div>
+            </div> <!-- PROGRAM FIELDS -->
+
             
-            <pre>programs = {{programs}}</pre>
-
-            <div class="fieldLabel">Status: (Open/Closed)</div>
-            <input type="radio" value="open" ng-model="location.programStatus"></input> Open
-            <br />
-            <input type="radio" value="closed" ng-model="location.programStatus"></input> Closed
-            <br />
-
-            <div class="fieldLabel">Public Access Status/Restrictions:</div>
-            <textarea class="fieldInput" ng-model="location.publicAccess"></textarea>
-            <br />
-            <div class="fieldLabel">Language Capabilities:</div>
-            <input type="text" class="fieldInput" ng-model="location.languages"></input>
-            <br />
-            <div class="fieldLabel">Assistive Technology Availability:</div>
-            <input type="text" class="fieldInput" ng-model="location.assistiveTechnology"></input>
-            <br />
-            <div class="fieldLabel">Childcare Availability:</div>
-            <textarea class="fieldInput" ng-model="location.childcare"></textarea>
-            <br />
-            <input type="checkbox" ng-model="location.freeParking"></input> Free Parking
-            <br />
-            <div class="fieldLabel">Bus stops:</div>
-            <input type="radio" value="oneBlock" ng-model="location.busStops"></input> Within 1 block
-            <br />
-            <input type="radio" value="fiveBlocks" ng-model="location.busStops"></input> Within 5 blocks
-            <br />
-            <input type="radio" value="notClose" ng-model="location.busStops"></input> Not close
 
             <br />
-            <input type="submit" value="submit" ng-click="saveFormData(location, programs)"></input>
+            
         </form>
         <pre>programs = {{programs}}</pre>
         <pre>location = {{location}}</pre>
