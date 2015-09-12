@@ -98,6 +98,7 @@
         }
 
         #mainContent {
+            width: 100%;
             overflow: auto;
             background-image: url("images/DECABackground.jpg");
             background-size: cover;
@@ -198,13 +199,13 @@
                     <div class="fieldLabel">Paid or Volunteer:</div>
                     <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
                     <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
+                    <input type="radio" ng-model="location.onSiteTrainerPaid" value="NotApplicable" />N/A
                     <br />
                     <div class="fieldLabel">Hours Available:</div>
                     <input type="number" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
                     <br />
                     <div class="fieldLabel">Provided by Organization:</div>
-                    <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="yes"> Yes
-                    <input type="radio" ng-model="location.onSiteTrainerProvidedByOrganization" value="no"> No
+                    <input type="text" class="fieldInput" ng-model="location.onSiteTrainerProvidedByOrganization">
                     <br />
                     <div class="fieldLabel">Status: (Open/Closed)</div>
                     <input type="radio" value="open" ng-model="location.programStatus"></input> Open
