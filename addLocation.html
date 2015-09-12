@@ -20,8 +20,11 @@
         }
 
         .mainHeader {
-            height: 80px;
-            background-color: #93D4EF;
+            
+        }
+
+        .decaBanner {
+            width: 100%;
         }
 
         .logoContainer {
@@ -30,7 +33,7 @@
             padding-bottom: 5px;
             padding-left: 5px;
             display: inline;
-            float: left;
+
         }
 
         .logoLink {
@@ -52,8 +55,10 @@
         }
 
         .loginContainer {
-            float: right;
             padding: 10px 10px 0 0;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
 
         .loginButton {
@@ -85,6 +90,7 @@
 
         .labProfilesLinkContainer {
             position: relative;
+            padding-right: 10%;
         }
 
         .storytellingProfilesLinkContainer {
@@ -105,6 +111,10 @@
             float: left;
         }
 
+        .program {
+            
+        }
+
         .fieldLabel {
             padding-top: 10px;
         }
@@ -113,6 +123,10 @@
             border-color: #005581;
             border-radius: 8px;
             border-width: 1px;
+        }
+
+        .submitButton {
+            margin-top: 50px;
         }
 
     </style>
@@ -129,14 +143,7 @@
   <body ng-app="addLocationModule" ng-controller="addLocationCtrl">
     <div class="container-fluid">
         <div class="mainHeader"> <!-- MAIN HEADER -->
-            <div class="logoContainer">
-                <a class="logoLink" href="/">
-                    <img src="images/header_icon.png" alt="Brand" class="logo" />
-                </a>
-            </div>
-            <div class="title">
-                DIGITAL EMPOWERMENT COMMUNITY OF AUSTIN
-            </div>
+            <img src="images/DECABanner.jpg" alt="Digital Inclusion banner" class="decaBanner">
             <div class="loginContainer">
                 <div class="loginButton">LOGIN</div>
             </div>
@@ -226,7 +233,7 @@
                 <br />
                 <button ng-click="addProgram()">Add Program</button>
 
-                <div ng-repeat="program in programs">
+                <div class="program" ng-repeat="program in programs">
                     <div class="fieldLabel">Program Name:</div>
                     <input type="text" class="fieldInput" ng-model="program.programName"></input>
                     <br />
