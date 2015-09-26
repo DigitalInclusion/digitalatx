@@ -236,13 +236,7 @@
                     <input type="radio" value="notClose" ng-model="location.busStops"></input> Not close
                     <br />
                     <div class="fieldLabel">Upload Picture:</div>
-                    <input type="file" class="uploadButton" nv-file-select uploader="uploader"/><br />
-                    <!-- <ul> -->
-                        <!-- <li ng-repeat="item in uploader.queue"> -->
-                            Name: <span ng-bind="item.file.name"></span><br />
-                            <button ng-click="item.upload()">upload</button>
-                        <!-- </li> -->
-                    <!-- </ul> -->
+                    <input type="file" fileread="uploadedPicture" />
                     <input type="submit" value="submit" class="submitButton" ng-click="saveFormData(location, programs)"></input>
                 </div> <!-- LOCATION FIELDS -->
 
