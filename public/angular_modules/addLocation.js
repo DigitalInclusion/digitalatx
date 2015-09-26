@@ -1,10 +1,10 @@
-var addLocationModule = angular.module('addLocationModule', []);
+var addLocationModule = angular.module('addLocationModule', ['angularFileUpload']);
 
-addLocationModule.controller('addLocationCtrl', function($scope, $http) {
+addLocationModule.controller('addLocationCtrl', function($scope, $http, FileUploader) {
+	
+	$scope.uploader = new FileUploader();
 	$scope.testVar = 'CONTROLLER WORKS';
-
 	$scope.formData = {};
-
 	$scope.programs = [];
 
 	$scope.saveFormData = function(location, programs) {
