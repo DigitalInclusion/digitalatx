@@ -29,6 +29,10 @@ app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname,'index.html'));
 });
 
+app.get('/locationInventory.html', function(request, response) {
+  response.sendFile(path.join(__dirname, 'locationInventory.html'));
+});
+
 app.get('/profile1.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'profile1.html'));
 });
