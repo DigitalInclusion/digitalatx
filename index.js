@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var mongojs = require('mongojs');
-var db = mongojs(DB_CONNECTION_STRING, ['locations']);
+var db = mongojs(DB_CONNECTION_STRING, ['locations'], {authMechanism: 'ScramSHA1'});
 
 // FIND LOCATIONS
 db.locations.find(function(err, doc) {
