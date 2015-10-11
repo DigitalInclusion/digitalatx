@@ -11,7 +11,7 @@ db.locations.find(function(err, doc) {
     console.log(err);
   }
   if (doc) {
-    console.log(doc);
+    console.log('locations present');
   } else {
     console.log('NO LOCATIONS!');
   }
@@ -64,6 +64,13 @@ app.post('/addLocation', function(request, response) {
     } else {
       console.log('INSERT FAILED');
     }
+  });
+});
+
+app.post('/getLocations', function(req, res) {
+  console.log('/getLocations POST');
+  var locations = db.locations.find(function(err, documents) {
+    res.send(documents);
   });
 });
 

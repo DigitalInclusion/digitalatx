@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Digital ATX</title>
+    <title>Locations</title>
 
     <!-- Bootstrap -->
     <link href="asset/bootstrap.min.css" rel="stylesheet">
@@ -17,10 +17,6 @@
 
         .container-fluid {
             padding: 0;
-        }
-
-        .mainHeader {
-            
         }
 
         .decaBanner {
@@ -89,7 +85,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="">
+  <body ng-app="locationInventoryModule" ng-controller="locationInventoryCtrl">
     <div class="container-fluid">
         <div class="mainHeader"> <!-- MAIN HEADER -->
             <img src="images/DECABanner.jpg" alt="Digital Inclusion banner" class="decaBanner">
@@ -117,7 +113,7 @@
         </div> <!-- SECOND HEADER -->
 
         <div id="mainContent">
-            
+            {{data}}
         </div> <!-- MAIN CONTENT -->
     </div><!-- /.container -->
 
