@@ -70,7 +70,7 @@ app.post('/addLocation', function(request, response) {
 app.post('/getLocations', function(req, res) {
   console.log('/getLocations POST');
   var locations = db.locations.find(function(err, documents) {
-    res.send(documents);
+    res.json(documents);
   });
 });
 
