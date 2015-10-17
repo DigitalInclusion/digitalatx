@@ -87,8 +87,12 @@
             float: left;
         }
 
+        .addProgramButton {
+            margin-bottom: 10px;
+        }
+
         .program {
-            
+            border-top: 1px solid black;
         }
 
         .fieldLabel {
@@ -211,7 +215,7 @@
                 <div id="programFields">
                     Programs at the Location:
                     <br />
-                    <button ng-click="addProgram()">Add Program</button>
+                    <button class="addProgramButton" ng-click="addProgram()">Add Program</button>
 
                     <div class="program" ng-repeat="program in programs">
                         <div class="fieldLabel">Program Name:</div>
