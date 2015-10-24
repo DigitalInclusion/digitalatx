@@ -170,12 +170,12 @@
                     <input type="radio" ng-model="location.onSiteTrainer" value="no" />No
                     <br />
                     <div class="fieldLabel">Paid or Volunteer:</div>
-                    <input type="radio" ng-model="location.onSiteTrainerPaid" value="Paid" />Paid
-                    <input type="radio" ng-model="location.onSiteTrainerPaid" value="Volunteer" />Volunteer
-                    <input type="radio" ng-model="location.onSiteTrainerPaid" value="NotApplicable" />N/A
+                    <input type="checkbox" ng-model="location.onSiteTrainerPaid" />Paid
+                    <input type="checkbox" ng-model="location.onSiteTrainerVolunteer" />Volunteer
+                    <input type="checkbox" ng-model="location.onSiteTrainerNa" value="NotApplicable" />N/A
                     <br />
                     <div class="fieldLabel">Hours Available:</div>
-                    <input type="number" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
+                    <input type="text" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
                     <br />
                     <div class="fieldLabel">Provided by Organization:</div>
                     <input type="text" class="fieldInput" ng-model="location.onSiteTrainerProvidedByOrganization">
@@ -297,8 +297,6 @@
                 <br />
             </form>
         </div> <!-- MAIN CONTENT -->
-        <pre>programs = {{programs}}</pre>
-        <pre>location = {{location}}</pre>
         <pre>form data = {{formData}}</pre>
 
     </div><!-- /.container -->
