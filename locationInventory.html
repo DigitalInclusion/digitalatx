@@ -202,13 +202,10 @@
                 <div class="location" ng-repeat="location in locations">
                     <a class="profileLink" href="/profile1.html?name={{location.name}}">
                         <div class="locationPictureContainer">
-                            <!-- <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" /> -->
-                            {{location.programs}}
+                            <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
                         </div>
                         <div class="locationName">
-
                             {{location.name}}
-                            
                         </div>
                     </a>
                 </div>

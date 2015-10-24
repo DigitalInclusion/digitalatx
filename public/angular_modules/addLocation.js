@@ -7,7 +7,13 @@ addLocationModule.controller('addLocationCtrl', function($scope, $http) {
 	$scope.programs = [];
 
 	$scope.saveFormData = function(location, programs) {
-		console.log($scope.uploadedPicture);
+		skills={};
+		angular.forEach(programs, function(program) {
+			skills = angular.extend(skills, program.programSkillsTraining);
+			console.log("skills = " + skills);
+		});
+		console.log(skills);
+		location.skills = skills;
 		location.programs = programs;
 		location.picture = $scope.uploadedPicture;
 		$scope.formData = angular.copy(location);
