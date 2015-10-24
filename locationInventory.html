@@ -91,6 +91,10 @@
             height: 150px;
         }
 
+        .location .profileLink {
+            text-decoration: none;
+        }
+
         .locationName {
             width: 100%;
             font-size: 16px;
@@ -139,12 +143,14 @@
 
         <div id="mainContent">
             <div class="location" ng-repeat="location in locations">
-                <div class="locationPictureContainer">
-                    <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
-                </div>
-                <div class="locationName">
-                    {{location.name}}
-                </div>
+                <a class="profileLink" href="/profile1.html?name={{location.name}}">
+                    <div class="locationPictureContainer">
+                        <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
+                    </div>
+                    <div class="locationName">
+                        {{location.name}}
+                    </div>
+                </a>
             </div>
         </div> <!-- MAIN CONTENT -->
     </div><!-- /.container -->
