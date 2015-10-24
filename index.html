@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,64 +12,176 @@
     <link href="asset/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    	.mainHeader {
-    		margin-bottom: 0;
-    	}
+        body {
+            color: #005581;
+            font-family:arial;
+            padding:0;
+        }
 
-    	.secondaryHeader {
-    		border-bottom: 1px solid grey;
-    	}
+        .container-fluid {
+            padding: 0;
+        }
 
-    	.navbar-brand {
-    		padding-top: 5px;
-    	}
+        .mainHeader {
+            
+        }
 
-    	.logo {
-    		height: 40px;
-    	}
+        .decaBanner {
+            width: 100%;
+        }
 
-    	.loginButton {
-    		margin-top: 8px;
-    	}
+        .logoContainer {
+            height: 70px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            display: inline;
 
-    	.profileLink {
-    		margin: 20px;
-    		float: left;
-    		height: 280px;
-    		width: 190px;
-    		border-right: 1px solid #DDDDDD;
-    		border-bottom: 1px solid #DDDDDD;
-    		border-left: 1px solid #DDDDDD;
-    		text-decoration: none;
-    	}
+        }
 
-    	.profileLinkText {
-    		color: #222222;
-    	}
+        .logoLink {
+            height: 70px;
+        }
 
-    	.profileLinkPoster {
-    		background-color: #FFFFFF;
-    	}
+        .logo {
+            height: 70px;
+        }
 
-    	.profileLinkUpdatedText {
-    		font-size: 9px;
-    		color: grey;
-    		font-style: italic;
-    	}
+        .title {
+            display: inline;
+            font-size: 35px;
+            line-height: 35px;
+            float: left;
+            padding-top: 5px;
+            padding-left: 15px;
+            max-width: 70%;
+        }
 
-    	.profileLinkPosterImage {
-    		height: 39px;
-    		margin: 5px;
-    	}
+        .loginContainer {
+            padding: 10px 10px 0 0;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
 
-    	.profileLinkAnchor {
-    	}
+        .loginButton {
+            padding: 5px 12px;
+            background-color: white;
+            border-radius: 6px;
+        }
 
-    	.profileLink a:hover {
-    		text-decoration: none;
-    	}
+        .secondHeader {
+            height: 30px;
+            background-color: #27AAE0;
+            font-size: 18px;
+        }
+
+        .secondHeaderLink {
+            float: left;
+            padding-top: 4px;
+            padding-left: 50px;
+        }
+
+        .secondHeaderLink a {
+            color: white;
+        }
+
+        .homeLinkContainer {
+            position: relative;
+            padding-right: 20%;
+        }
+
+        .labProfilesLinkContainer {
+            position: relative;
+            padding-right: 10%;
+        }
+
+        .storytellingProfilesLinkContainer {
+            position: relative;
+        }
+        .verticalBanner {
+          position:ablute;
+          top:0;
+          left:100px;
+          background-color:#27AAE0;
+        }
+
+        #bodyTitle {
+            display: inline-block;
+            color: #005581;
+            font: arial;
+            font-size: 35px;
+            line-height: 35px;
+            float: left;
+            padding-top: 25px;
+            padding-left: 35px;
+        }
+
+          #bodyText1 {
+            display:inline-block;
+            color: #005581;
+            font: arial;
+            font-size: 14px;
+            line-height: 25px;
+            padding-left: 35px;
+        }
+
+
+            .introParagraph{
+           display:inline-block;
+           vertical-align: top;
+           float:left;
+            }
+
+            .imgContainer{
+           display:inline-block;
+           vertical-align: top;   
+           float:right;       
+            }
+
+        #mainContent {
+            width: 100%;
+            overflow: auto;
+            background-image: url("images/DECABackground.jpg");
+            background-size: cover;
+        }
+
+        .simple-form {
+            padding-left: 15px;
+        }
+
+        #locationFields {
+            width: 50%;
+            float: left;
+        }
+
+        #programFields {
+            width: 50%;
+            float: left;
+        }
+
+        .program {
+            
+        }
+
+        .fieldLabel {
+            padding-top: 10px;
+        }
+
+        .fieldInput {
+            border-color: #005581;
+            border-radius: 8px;
+            border-width: 1px;
+        }
+
+        .submitButton {
+            margin-top: 50px;
+        }
 
     </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="public/angular_modules/addLocation.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,71 +189,61 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
-    	<nav class="navbar navbar-inverse mainHeader">
-    		<div class="container-fluid">
-    			<div class="navbar-header">
-    				<a class="navbar-brand" href="#">
-    					<img src="images/header_icon.png" alt="Brand" class="logo" />
-    				</a>
-    			</div>
-    			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    			  
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">Lab Profiles<span class="sr-only">(current)</span></a></li>
-			        <li><a href="#">Story Telling</a></li>
-			        <li><a href="#">Mapping</a></li>
-			      </ul>
+  <body ng-app="addLocationModule" ng-controller="addLocationCtrl">
+    <div class="container-fluid">
+        <div class="mainHeader"> <!-- MAIN HEADER -->
+            <img src="images/DECABanner.jpg" alt="Digital Inclusion banner" class="decaBanner">
+            <div class="loginContainer">
+                <div class="loginButton">LOGIN</div>
+            </div>
+        </div> <!-- MAIN HEADER -->
 
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><button type="button" class="btn btn-default loginButton">Log in</button></li>
-			    </div><!-- /.navbar-collapse -->
-    		</div>
-    	</nav>
+        <div class="secondHeader"> <!-- SECOND HEADER -->
+            <div class="homeLinkContainer secondHeaderLink">
+                <a href="/">
+                    HOME
+                </a>
+            </div>
+            <div class="labProfilesLinkContainer secondHeaderLink">
+                <a href="/locationInventory.html">
+                    LAB PROFILES
+                </a>
+            </div>
+            <div class="storytellingProfilesLinkContainer secondHeaderLink">
+                <a href="/storytelling">
+                    STORYTELLING
+                </a>
+            </div>
+        </div> <!-- SECOND HEADER -->
+        <div id="mainContent">
+     <div class="verticalBanner">
+     </div>
+      <div id="bodyTitle">
+            Welcome to the Digital Empowerment Community of Austin
+    </div>
 
-    	<nav class="navbar navbar-default secondaryHeader">
-    		<h1>Digital Empowerment Community of Austin</h1>
-    	</nav>
+<div id="bodyText1">
 
-    	<div class="profileLink">
-    		<a href="/profile1.html" class="profileLinkAnchor">
-	    		<div><img src="images/Conley_Guerrero_Senior_Activity_Center_image.jpg" class="img-responsive img-rounded" alt="Responsive image"></div>
-	    		<div class="profileLinkPoster"><div class="profileLinkText">Sharla Chamberlain</div><div class="profileLinkUpdatedText">Thursday</div></div>
-	    		<div>
-	    			<img src="images/sharla.jpg" class="img-responsive profileLinkPosterImage" alt="Responsive image">
-	    		</div>
-	    		<div class="profileLinkTitle"><h4>Conley Guerrero Senior Activity Center</h4></div>
-    		</a>
-    		<div class="profileLinkInfo">
-    			<span></span>
-    			<span></span>
-    			<span></span>
-    		</div>
-    	</div>
 
-    	<div class="profileLink">
-    		<a href="/profile2.html" class="profileLinkAnchor">
-	    		<div><img src="images/Faulk_Central_Library_image.png" class="img-responsive img-rounded" alt="Responsive image"></div>
-	    		<div class="profileLinkPoster"><div class="profileLinkText">Sharla Chamberlain</div><div class="profileLinkUpdatedText">12 hours ago</div></div>
-	    		<div>
-	    			<img src="images/sharla.jpg" class="img-responsive profileLinkPosterImage" alt="Responsive image">
-	    		</div>
-	    		<div class="profileLinkTitle"><h4>Faulk Central Library</h4></div>
-    		</a>
-    		<div class="profileLinkInfo">
-    			<span></span>
-    			<span></span>
-    			<span></span>
-    		</div>
-    	</div>
+      <div class="introParagraph" align="left">DigitalATX.org is a web-based tool for knowledge sharing and creating an inventory of assets for digital inclusion programming in Austin. It is the a community-based resource for documenting programs and site locations within the Digital Empowerment Community of Austin.</div><br>
 
-        <a href="/addLocation.html" class="btn btn-default">Contribute</a>
-    </div><!-- /.container -->
+               <div class="imgContainer" align="right"><img src="images/GTOPs2015.png" alt="GTOPs 2015" style="width:304px;height:275px;"></div>  
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="asset/bootstrap.min.js"></script>
-  </body>
+       <p><br><br><b>Knowledge-Sharing: How Does It Work? </b> 
+        <br>The knowledge-sharing portion of DigitalATX.org is key resource for tracking public access computer labs, private labs that may be available for programming, and digital literacy training programs in Austin. Navigate to the <b><i>Lab Profiles</b></i> tab to view documented Lab Profiles detailing public computer labs, libraries, schools and more. Information captured for each Lab Profile includes number of computers available for use, assistive technology, availability of on-site trainers and more. Programs operating at specific sites can be added to each Lab Profile to track which nonprofit organizations or leveraging which locations in Austin for digital inclusion programming.
+
+      <p><br><b>Knowledge-Sharing: How Can I Help?</b> 
+        <br>This inventory of programs and site locations in Austin is only as strong as the collective knowledge within the Digital Empowerment Community of Austin. Numerous organizations are currently providing programming throughout the city, but more work is needed to ensure all Austin residents have access to the resources and training needed to build digital skills. Creating a comprehensive and living inventory of resources will help all organizations in Austin improve and potentially expand their service delivery. But to accomplish this, we need all organizations to ensure their knowledge is captured. 
+        <br><br>From the <b><i>Lab Profiles</b></i> inventory page, click <b><i>Contribute</b></i> to fill out a web-form about all site locations and programs you are aware of in Austin. Make sure to <b><i>Edit</b></i> any information that becomes out of date.
+    </p>
+
+      <p><br><b>What’s Next?</b> 
+        <br>The Digital Inclusion Working Group will serve as beta-testers for DigitalATX.org as further development is completed. Ideas, suggestions and feedback are encouraged and can be shared with digital.inclusion@austintexas.gov. Your feedback will help us to make usability improvements to the knowledge-sharing portion of the site.   
+        <br><br>As more sites are added to the location inventory, we have plans to visualize this inventory using a map that compares these assets with key data metrics from the Austin Digital Assessment. Also stay tuned for future additions to DigitalATX.org including a blogging feature that will allow you to tell stories and update the community about the great work you’re doing in Austin.  
+        <br><br>DigitalATX.org is a civic hacking project that began at the 2015 ATX Hack for Change.
+    </p>
+
+    </div>
+    </div>
+   </body>
 </html>
