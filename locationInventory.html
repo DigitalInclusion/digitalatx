@@ -67,10 +67,26 @@
         }
 
         #mainContent {
+            position: relative;
             width: 100%;
             overflow: auto;
             background-image: url("images/DECABackground.jpg");
             background-size: cover;
+        }
+
+        .addLocationButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 6px;
+        }
+
+        #mainContent .skillsTrainingFilterArea {
+            display: inline-block;
+        }
+
+        #mainContent .skillsTrainingCheckboxes {
+            display: inline-block;
         }
 
         #mainContent .location {
@@ -142,15 +158,60 @@
         </div> <!-- SECOND HEADER -->
 
         <div id="mainContent">
-            <div class="location" ng-repeat="location in locations">
-                <a class="profileLink" href="/profile1.html?name={{location.name}}">
-                    <div class="locationPictureContainer">
-                        <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
-                    </div>
-                    <div class="locationName">
-                        {{location.name}}
-                    </div>
-                </a>
+            <div class="skillsTrainingFilterArea">
+                <div class="skillsTrainingTitle">
+                <strong>Filter by Training Offered:</strong>
+                </div>
+                <div class="skillsTrainingCheckboxes">
+                    <input type="checkbox" ng-model="programSkillsTraining.basic"></input> Basic Skills
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.microsoftOffice"></input> Microsoft Office
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.email"></input> Email
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.generalWebSearching"></input> General Web Searching
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.resumeDevelopment"></input> Resume Development
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.onlineJobSearches"></input> Online Job Searches
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.aisdParentCloud"></input> AISD Parent Cloud
+                </div>
+                <div class="skillsTrainingCheckboxes">
+                    <input type="checkbox" ng-model="programSkillsTraining.hardware"></input> Hardware
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.software"></input> Software
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.collegePrep"></input> College Prep
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.stem"></input> STEM
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.webDevelopment"></input> Web Development
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.socialConnections"></input> Social Connections
+                    <br />
+                    <input type="checkbox" ng-model="programSkillsTraining.other"></input> Other
+                    <br />
+                </div>
+            </div>
+
+            <button class="addLocationButton">
+                <a href="/addLocation.html">Add a Location</a>
+            </button>
+            <div class="locations">
+                <div class="location" ng-repeat="location in locations">
+                    <a class="profileLink" href="/profile1.html?name={{location.name}}">
+                        <div class="locationPictureContainer">
+                            <!-- <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" /> -->
+                            {{location.programs}}
+                        </div>
+                        <div class="locationName">
+
+                            {{location.name}}
+                            
+                        </div>
+                    </a>
+                </div>
             </div>
         </div> <!-- MAIN CONTENT -->
     </div><!-- /.container -->
