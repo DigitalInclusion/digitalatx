@@ -1,7 +1,5 @@
 # Digital Empowerment Community of Austin
 
-## This repository is for the **_Digital Empowerment Community of Austin_** website.  
-
 DigitalATX.org is a web-based tool for knowledge sharing and creating an inventory of assets for digital inclusion programming in Austin. It is the a community-based resource for documenting programs and site locations within the Digital Empowerment Community of Austin.
 
 ## Knowledge-Sharing: How Does It Work?
