@@ -1,36 +1,12 @@
-# node-js-getting-started
+# Digital Empowerment Community of Austin
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+## This repository is for the **_Digital Empowerment Community of Austin_** website.  
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+DigitalATX.org is a web-based tool for knowledge sharing and creating an inventory of assets for digital inclusion programming in Austin. It is the a community-based resource for documenting programs and site locations within the Digital Empowerment Community of Austin.
 
-## Running Locally
+## Knowledge-Sharing: How Does It Work?
+The knowledge-sharing portion of DigitalATX.org is key resource for tracking public access computer labs, private labs that may be available for programming, and digital literacy training programs in Austin. Navigate to the Lab Profiles tab to view documented Lab Profiles detailing public computer labs, libraries, schools and more. Information captured for each Lab Profile includes number of computers available for use, assistive technology, availability of on-site trainers and more. Programs operating at specific sites can be added to each Lab Profile to track which nonprofit organizations or leveraging which locations in Austin for digital inclusion programming.
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+## Knowledge-Sharing: How Can I Help?
+This inventory of programs and site locations in Austin is only as strong as the collective knowledge within the Digital Empowerment Community of Austin. Numerous organizations are currently providing programming throughout the city, but more work is needed to ensure all Austin residents have access to the resources and training needed to build digital skills. Creating a comprehensive and living inventory of resources will help all organizations in Austin improve and potentially expand their service delivery. But to accomplish this, we need all organizations to ensure their knowledge is captured.
