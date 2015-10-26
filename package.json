@@ -10,7 +10,7 @@
     "angular": "^1.3.16",
     "body-parser": "^1.13.1",
     "express": "~4.9.x",
-    "mongojs": "^1.4.0",
+    "mongojs": "^1.4.x",
     "multer": "^0.1.8"
   },
   "engines": {
