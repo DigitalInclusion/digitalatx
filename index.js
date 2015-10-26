@@ -1,4 +1,4 @@
-var DB_CONNECTION_STRING = "process.env.MONGO_URL";
+var DB_CONNECTION_STRING = process.env.MONGO_URL;
 var express = require('express');
 var app = express();
 var path = require('path');
