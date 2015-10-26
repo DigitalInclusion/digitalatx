@@ -1,6 +1,5 @@
 var profileModule = angular.module('profileModule', ['ngRoute']);
 
-
 profileModule.config(function ($routeProvider, $locationProvider) {
 	//configure the routing rules here
     $routeProvider.when('/profile/:name/:siteid', {
