@@ -1,4 +1,4 @@
-var DB_CONNECTION_STRING = process.env.MONGO_URL;
+var DB_CONNECTION_STRING = "process.env.MONGO_URL";
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -35,6 +35,13 @@ app.get('/locationInventory.html', function(request, response) {
 
 app.get('/profile1.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'profile1.html'));
+});
+
+app.get('/profile/:name/:siteid', function (request, response, next) {
+  var name = request.params.name;
+  var siteid = request.params.siteid;
+
+  response.sendFile(path.join(__dirname, 'profile.html'));   
 });
 
 app.get('/profile2.html', function(request, response) {
