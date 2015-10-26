@@ -13,6 +13,8 @@
     <style>
         body {
             color: #005581;
+            background-image: url("images/DECABackground.jpg");
+            background-size: cover;
         }
 
         .container-fluid {
@@ -69,8 +71,6 @@
         #mainContent {
             width: 100%;
             overflow: auto;
-            background-image: url("images/DECABackground.jpg");
-            background-size: cover;
         }
 
         .simple-form {
@@ -85,6 +85,11 @@
         #programFields {
             width: 50%;
             float: left;
+            padding-top: 10px;
+        }
+
+        #programFields .programsHeader {
+            text-align: center;
         }
 
         .addProgramButton {
@@ -213,10 +218,7 @@
                 </div> <!-- LOCATION FIELDS -->
 
                 <div id="programFields">
-                    Programs at the Location:
-                    <br />
-                    <button class="addProgramButton" ng-click="addProgram()">Add Program</button>
-
+                    <h4 class="programsHeader">Programs at the Location:</h4>
                     <div class="program" ng-repeat="program in programs">
                         <div class="fieldLabel">Program Name:</div>
                         <input type="text" class="fieldInput" ng-model="program.programName"></input>
@@ -292,6 +294,7 @@
                         <br />
                         <hr />
                     </div>
+                    <button class="addProgramButton" ng-click="addProgram()">Add Program</button>
                 </div> <!-- PROGRAM FIELDS -->
 
                 <br />

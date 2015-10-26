@@ -13,6 +13,8 @@
     <style>
         body {
             color: #005581;
+            background-image: url("images/DECABackground.jpg");
+            background-size: cover;
         }
 
         .container-fluid {
@@ -70,8 +72,6 @@
             position: relative;
             width: 100%;
             overflow: auto;
-            background-image: url("images/DECABackground.jpg");
-            background-size: cover;
         }
 
         .addLocationButton {
@@ -199,7 +199,7 @@
                 <a href="/addLocation.html">Add a Location</a>
             </button>
             <div class="locations">
-                <div class="location" ng-repeat="location in locations">
+                <div class="location" ng-repeat="location in locations" ng-show="offersSkills(location.skills, programSkillsTraining)">
                     <a class="profileLink" href="/profile1.html?name={{location.name}}">
                         <div class="locationPictureContainer">
                             <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
