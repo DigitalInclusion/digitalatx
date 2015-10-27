@@ -35,7 +35,8 @@ profileModule.controller('profileCtrl', function($scope, $http, $location, $rout
 					console.log("PROFILE MATCH");
 					$scope.profileName = location.name;
 					$scope.profilePicture = location.picture;
-					$scope.profileId = location._id;
+					// $scope.profileId = location._id;
+					$scope.location = location;
 					//console.dir(location);
 				}
 			});
