@@ -2,11 +2,11 @@ var profileModule = angular.module('profileModule', ['ngRoute']);
 
 profileModule.config(function ($routeProvider, $locationProvider) {
 	//configure the routing rules here
-    $routeProvider.when('/profile/:name/:siteid', {
-     	controller: 'profileCtrl'
-      });
+    // $routeProvider.when('/profile/:name/:siteid', {
+    //  	controller: 'profileCtrl'
+    //   });
 
-   $routeProvider.otherwise( {redirectTo: '/'} );
+   // $routeProvider.otherwise( {redirectTo: '/'} );
 
         //routing DOESN'T work without html5Mode
        $locationProvider.html5Mode(true);
@@ -35,9 +35,8 @@ profileModule.controller('profileCtrl', function($scope, $http, $location, $rout
 					console.log("PROFILE MATCH");
 					$scope.profileName = location.name;
 					$scope.profilePicture = location.picture;
-					// $scope.profileId = location._id;
 					$scope.location = location;
-					//console.dir(location);
+					console.dir(location);
 				}
 			});
 		}).error(function(err) {
