@@ -200,7 +200,7 @@
             </button>
             <div class="locations">
                 <div class="location" ng-repeat="location in locations" ng-show="offersSkills(location.skills, programSkillsTraining)">
-                    <a class="profileLink" href="/profile1.html?name={{location.name}}">
+                 <a class="profileLink" href="/profile/name={{location.name}}/siteid={{location._id}}">
                         <div class="locationPictureContainer">
                             <img class="locationPicture" data-ng-src="{{location.picture}}" alt="picture not available for this location" />
                         </div>

@@ -37,6 +37,17 @@ app.get('/profile1.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'profile1.html'));
 });
 
+app.get('/profile/:name/:siteid', function (request, response, next) {
+  var name = request.params.name;
+  var siteid = request.params.siteid;
+
+  response.sendFile(path.join(__dirname, 'profile.html'));   
+});
+
+app.get('/storytelling', function(request, response) {
+  response.sendFile(path.join(__dirname, 'storytelling.html'));
+});
+
 app.get('/profile2.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'profile2.html'));
 });
