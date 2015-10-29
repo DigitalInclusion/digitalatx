@@ -69,6 +69,7 @@ app.post('/addLocation', function(request, response) {
 
 app.post('/getLocations', function(req, res) {
   console.log('/getLocations POST');
+  // db.locations.remove({name: 'name'});
   var locations = db.locations.find(function(err, documents) {
     res.json(documents);
   });
