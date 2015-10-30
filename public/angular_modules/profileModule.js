@@ -23,12 +23,9 @@ profileModule.controller('profileCtrl', function($scope, $http, $location, $rout
 	var url = $location.$$path;
 	var id = url.substr(-24);
 	var currentdate = new Date(); 
-	var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
+	var datetime = "Last Sync: " + currentdate.toDateString() + " @ "  
+                + currentdate.toTimeString();
+
 	$http.post('/getLocations', {})
 		.success(function(locations) {
 			console.log("GET LOCATIONS SUCCESS");
@@ -42,7 +39,6 @@ profileModule.controller('profileCtrl', function($scope, $http, $location, $rout
 					$scope.location = location;
 					console.dir(location);
 					$scope.datetime = datetime;
-					console.log("datetime:", $scope.datetime);
 
 				}
 			});
