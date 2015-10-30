@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/DigitalInclusion/digitalatx.png?branch=master)](https://travis-ci.org/DigitalInclusion/digitalatx)
+
 ## Digital Empowerment Community of Austin
 
 DigitalATX.org is a web-based tool for knowledge sharing and creating an inventory of assets for digital inclusion programming in Austin. It is the a community-based resource for documenting programs and site locations within the Digital Empowerment Community of Austin.
