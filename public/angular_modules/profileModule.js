@@ -14,7 +14,9 @@ profileModule.config(function ($routeProvider, $locationProvider) {
  //    $locationProvider.html5Mode({
  //  			enabled: true,
  //  			requireBase: false
-	// });
+// });
+
+// evaluate Angular routing for the site
 
 });
 
