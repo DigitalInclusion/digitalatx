@@ -42,6 +42,7 @@ profileModule.controller('profileCtrl', function($scope, $http, $location, $rout
 					$scope.location = location;
 					console.dir(location);
 					$scope.datetime = datetime;
+					console.log("datetime:", $scope.datetime);
 
 				}
 			});
