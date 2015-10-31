@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/DigitalInclusion/digitalatx.png?branch=master)](http://travis-ci.org/DigitalInclusion/digitalatx)
+[![Build Status](https://travis-ci.org/DigitalInclusion/digitalatx.svg?branch=master)](https://travis-ci.org/DigitalInclusion/digitalatx)
 
 ## Digital Empowerment Community of Austin
 
