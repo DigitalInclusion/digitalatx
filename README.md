@@ -10,3 +10,4 @@ The knowledge-sharing portion of DigitalATX.org is key resource for tracking pub
 
 ### Knowledge-Sharing: How Can I Help?
 This inventory of programs and site locations in Austin is only as strong as the collective knowledge within the Digital Empowerment Community of Austin. Numerous organizations are currently providing programming throughout the city, but more work is needed to ensure all Austin residents have access to the resources and training needed to build digital skills. Creating a comprehensive and living inventory of resources will help all organizations in Austin improve and potentially expand their service delivery. But to accomplish this, we need all organizations to ensure their knowledge is captured.
+
