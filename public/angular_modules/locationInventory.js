@@ -22,11 +22,21 @@ locationInventoryModule.controller('locationInventoryCtrl', function($scope, $ht
 		}
 	);
 
-	$scope.offersSkills = function(locationSkills, filterOptions) {
+	$scope.offersSkills = function(locationOrg, locationZipcode, locationSkills, filterOptions) {
 		// No checkboxes selected.
 		if (!filterOptions) {
 			return true;
 		}
+
+		if (!filterOptions.organization && !filterOptions.zipcode && !filterOptions.programSkillsTraining) {
+			return true;
+		}
+
+		// Check if the locations's organization and zipcode match filter terms.
+		if ((locationOrg !== filterOptions.organization)) {
+			return false;
+		}
+
 		// No options are selected, unset filter options.
 		if (!filterOptions.programSkillsTraining ||
 				(!filterOptions.programSkillsTraining.basic &&
@@ -65,7 +75,7 @@ locationInventoryModule.controller('locationInventoryCtrl', function($scope, $ht
 				(filterOptions.programSkillsTraining.webDevelopment && !locationSkills.webDevelopment) ||
 				(filterOptions.programSkillsTraining.socialConnections && !locationSkills.socialConnections) ||
 				(filterOptions.programSkillsTraining.other && !locationSkills.other)) {
-				return false;
+			return false;
 		}
 		return true;
 	};
