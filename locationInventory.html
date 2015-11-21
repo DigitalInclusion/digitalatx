@@ -81,12 +81,21 @@
             border-radius: 6px;
         }
 
+        #mainContent .filterArea {
+            display: inline-block;
+        }
+
         #mainContent .skillsTrainingFilterArea {
             display: inline-block;
         }
 
         #mainContent .skillsTrainingCheckboxes {
             display: inline-block;
+        }
+
+        #mainContent .locations {
+            display: inline-block;
+            vertical-align: top;
         }
 
         #mainContent .location {
@@ -158,44 +167,48 @@
         </div> <!-- SECOND HEADER -->
 
         <div id="mainContent">
-            <div class="skillsTrainingFilterArea">
-                <div class="skillsTrainingTitle">
-                <strong>Filter by Training Offered:</strong>
-                </div>
-                <div class="skillsTrainingCheckboxes">
-                    <input type="checkbox" ng-model="programSkillsTraining.basic"></input> Basic Skills
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.microsoftOffice"></input> Microsoft Office
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.email"></input> Email
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.generalWebSearching"></input> General Web Searching
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.resumeDevelopment"></input> Resume Development
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.onlineJobSearches"></input> Online Job Searches
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.aisdParentCloud"></input> AISD Parent Cloud
-                </div>
-                <div class="skillsTrainingCheckboxes">
-                    <input type="checkbox" ng-model="programSkillsTraining.hardware"></input> Hardware
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.software"></input> Software
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.collegePrep"></input> College Prep
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.stem"></input> STEM
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.webDevelopment"></input> Web Development
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.socialConnections"></input> Social Connections
-                    <br />
-                    <input type="checkbox" ng-model="programSkillsTraining.other"></input> Other
-                    <br />
+            <a href="/addLocation.html"><button class="addLocationButton">Add a Location</button></a>
+
+            <div class="filterArea">
+                <div class="skillsTrainingFilterArea">
+                    <div class="skillsTrainingTitle">
+                    <strong>Filter by Training Offered:</strong>
+                    </div>
+                    <div class="skillsTrainingCheckboxes">
+                        <input type="checkbox" ng-model="programSkillsTraining.basic"></input> Basic Skills
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.microsoftOffice"></input> Microsoft Office
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.email"></input> Email
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.generalWebSearching"></input> General Web Searching
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.resumeDevelopment"></input> Resume Development
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.onlineJobSearches"></input> Online Job Searches
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.aisdParentCloud"></input> AISD Parent Cloud
+                    </div>
+                    <div class="skillsTrainingCheckboxes">
+                        <input type="checkbox" ng-model="programSkillsTraining.hardware"></input> Hardware
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.software"></input> Software
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.collegePrep"></input> College Prep
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.stem"></input> STEM
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.webDevelopment"></input> Web Development
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.socialConnections"></input> Social Connections
+                        <br />
+                        <input type="checkbox" ng-model="programSkillsTraining.other"></input> Other
+                        <br />
+                    </div>
                 </div>
             </div>
             
-            <a href="/addLocation.html"><button class="addLocationButton">Add a Location</button></a>
+            
             
             <div class="locations">
                 <div class="location" ng-repeat="location in locations" ng-show="offersSkills(location.skills, programSkillsTraining)">
