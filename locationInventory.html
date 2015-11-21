@@ -194,10 +194,9 @@
                     <br />
                 </div>
             </div>
-
-            <button class="addLocationButton">
-                <a href="/addLocation.html">Add a Location</a>
-            </button>
+            
+            <a href="/addLocation.html"><button class="addLocationButton">Add a Location</button></a>
+            
             <div class="locations">
                 <div class="location" ng-repeat="location in locations" ng-show="offersSkills(location.skills, programSkillsTraining)">
                  <a class="profileLink" href="/profile/name={{location.name}}/siteid={{location._id}}">
