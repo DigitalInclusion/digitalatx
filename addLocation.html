@@ -186,7 +186,13 @@
                     <input type="checkbox" ng-model="location.onSiteTrainerNa" value="NotApplicable" />N/A
                     <br />
                     <div class="fieldLabel">Hours Available:</div>
-                    <input type="text" class="fieldInput" ng-model="location.onSiteTrainerHours"></input>
+                    Monday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.monday"></input><br />
+                    Tuesday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.tuesday"></input><br />
+                    Wednesday: <input type="text" class="fieldInput" ng-model="location.hours.wednesday"></input><br />
+                    Thursday: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.thursday"></input><br />
+                    Friday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.friday"></input><br />
+                    Saturday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.saturday"></input><br />
+                    Sunday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="fieldInput" ng-model="location.hours.sunday"></input>
                     <br />
                     <div class="fieldLabel">Provided by Organization:</div>
                     <input type="text" class="fieldInput" ng-model="location.onSiteTrainerProvidedByOrganization">
