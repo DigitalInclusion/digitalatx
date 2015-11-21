@@ -248,7 +248,14 @@
                         <li>Contact Info</li>
                         <li>Street Address: {{location.address}}</li>
                         <li>Zipcode: {{location.zipcode}}</li>
-                        <li>Hours Available: {{location.onSiteTrainerHours}}</li>
+                        <li>Hours Available: </li>
+                        <li>Monday: {{location.hours.monday}}</li>
+                        <li>Tuesday: {{location.hours.tuesday}}</li>
+                        <li>Wednesday: {{location.hours.wednesday}}</li>
+                        <li>Thursday: {{location.hours.thurday}}</li>
+                        <li>Friday: {{location.hours.friday}}</li>
+                        <li>Saturday: {{location.hours.saturday}}</li>
+                        <li>Sunday: {{location.hours.sunday}}</li>
                         <li>Number of Machines: {{location.numberOfMachines}}</li>
                         <li>Paid Onsite Trainer: {{location.onSiteTrainerPaid}}</li>
                         <li>Volunteer Onsite Trainer: {{location.onSiteTrainerVolunteer}}</li>
@@ -323,66 +330,7 @@
                         <!-- End Nested Comment -->
                     </div>
                 </div>
-
             </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-                <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                    <!-- /.input-group -->
-                </div>
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Blog Categories</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
-
-            </div>
-
         </div>
         <!-- /.row -->
 
