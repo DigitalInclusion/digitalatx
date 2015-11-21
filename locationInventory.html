@@ -71,6 +71,7 @@
         #mainContent {
             position: relative;
             width: 100%;
+            min-height: 100px;
             overflow: auto;
         }
 
@@ -83,11 +84,16 @@
 
         #mainContent .filterArea {
             display: inline-block;
+            position: fixed;
+            height: 100%;
             padding: 10px 0 0 10px;
+            background-color: #93D4EF;
+            color: #337AB7;
         }
 
         .filterArea .filterAreaLabel {
             font-weight: bold;
+            padding-top: 10px;
         }
 
         #mainContent .skillsTrainingFilterArea {
@@ -101,6 +107,8 @@
         #mainContent .locations {
             display: inline-block;
             vertical-align: top;
+            position: relative;
+            left: 329px;
         }
 
         #mainContent .location {
