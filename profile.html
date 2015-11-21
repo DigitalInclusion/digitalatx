@@ -103,7 +103,7 @@
             position: relative;
         }
         .verticalBanner {
-          position:ablute;
+          position:absolute;
           top:0;
           left:100px;
           background-color:#27AAE0;
@@ -120,7 +120,7 @@
             padding-left: 35px;
         }
 
-          #bodyText1 {
+        #bodyText1 {
             display:inline-block;
             color: #005581;
             font: arial;
@@ -130,17 +130,17 @@
         }
 
 
-            .introParagraph{
+        .introParagraph{
            display:inline-block;
            vertical-align: top;
            float:left;
-            }
+        }
 
-            .imgContainer{
+        .imgContainer{
            display:inline-block;
            vertical-align: top;   
            float:right;       
-            }
+        }
 
         #mainContent {
             width: 100%;
@@ -149,37 +149,27 @@
             background-size: cover;
         }
 
-        .simple-form {
-            padding-left: 15px;
+        .locationName {
+            display: inline-block;
         }
 
-        #locationFields {
-            width: 50%;
-            float: left;
+        .lastSync {
+            display: inline;
+            float: right;
+            padding-top: 30px;
         }
 
-        #programFields {
-            width: 50%;
-            float: left;
+        .locationAddress {
+            display: inline-block;
+            margin-top: 5px;
         }
 
-        .program {
-            
+        .editLocation {
+            display: inline-block;
+            float: right;
+            text-decoration: underline;
         }
 
-        .fieldLabel {
-            padding-top: 10px;
-        }
-
-        .fieldInput {
-            border-color: #005581;
-            border-radius: 8px;
-            border-width: 1px;
-        }
-
-        .submitButton {
-            margin-top: 50px;
-        }
 
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -216,33 +206,24 @@
             </div>
         </div> <!-- SECOND HEADER -->
         <div id="mainContent">
-     <div class="verticalBanner">
-     </div>
+            <div class="verticalBanner">
+            </div>
 
-   <!-- Page Content -->
-    <div class="container">
+            <!-- Page Content -->
+            <div class="container">
+                <div class="row">
 
-        <div class="row">
-
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
-
-                <!-- Blog Post -->
-
-                <!-- Title -->
-                <h1>{{ location.name}}</h1>
-
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span>{{ datetime }}</p>
-
-                <hr>
-
-                <!-- Preview Image -->
-                <div class="well">
-                    <img class="img-responsive" src="{{ location.picture }}" alt="{{ location.name }}">
-                    <hr>
-   
-
+                    <!-- Title -->
+                    <h2 class="locationName">{{location.name}}</h2>
+                    <!-- Date/Time -->
+                    <div class="lastSync"><span class="glyphicon glyphicon-time"></span>{{ datetime }}</div>
+                    <br />
+                    <h4 class="locationAddress">{{location.address}}</h4>
+                    <div class="editLocation">Edit this page</div>
+                    <!-- Preview Image -->
+                    <div class="well">
+                        <img class="img-responsive" src="{{ location.picture }}" alt="{{ location.name }}">
+                        <hr>
                     <!-- Post Content -->
                     <p><ul>
                         <li>Contact Info</li>
@@ -269,10 +250,7 @@
                         <li>Bus stops: {{location.busStops}}</li>
                       </ul>
                     </p>
-
-                       
                 </div>
-
                 <hr>
 
                 <!-- Blog Comments -->
@@ -330,7 +308,6 @@
                         <!-- End Nested Comment -->
                     </div>
                 </div>
-            </div>
         </div>
         <!-- /.row -->
 
