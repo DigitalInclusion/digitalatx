@@ -33,7 +33,7 @@ locationInventoryModule.controller('locationInventoryCtrl', function($scope, $ht
 		}
 
 		// Check if the locations's organization and zipcode match filter terms.
-		if (filterOptions.organization && (locationOrg !== filterOptions.organization)) {
+		if (filterOptions.organization && (angular.lowercase(locationOrg) !== angular.lowercase(filterOptions.organization))) {
 			return false;
 		}
 		if (filterOptions.zipcode && (locationZipcode !== filterOptions.zipcode)) {
