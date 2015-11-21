@@ -28,21 +28,22 @@ locationInventoryModule.controller('locationInventoryCtrl', function($scope, $ht
 			return true;
 		}
 		// No options are selected, unset filter options.
-		if (!(filterOptions.basic) &&
-				!(filterOptions.microsoftOffice) &&
-				!(filterOptions.email) &&
-				!(filterOptions.generalWebSearching) &&
-				!(filterOptions.resumeDevelopment) &&
-				!(filterOptions.onlineJobSearches) &&
-				!(filterOptions.aisdParentCloud) &&
-				!(filterOptions.hardware) &&
-				!(filterOptions.software) &&
-				!(filterOptions.collegePrep) &&
-				!(filterOptions.stem) &&
-				!(filterOptions.webDevelopment) &&
-				!(filterOptions.socialConnections) &&
-				!(filterOptions.other)) {
-			filterOptions = undefined;
+		if (!filterOptions.programSkillsTraining ||
+				(!filterOptions.programSkillsTraining.basic &&
+				!filterOptions.programSkillsTraining.microsoftOffice &&
+				!filterOptions.programSkillsTraining.email &&
+				!filterOptions.programSkillsTraining.generalWebSearching &&
+				!filterOptions.programSkillsTraining.resumeDevelopment &&
+				!filterOptions.programSkillsTraining.onlineJobSearches &&
+				!filterOptions.programSkillsTraining.aisdParentCloud &&
+				!filterOptions.programSkillsTraining.hardware &&
+				!filterOptions.programSkillsTraining.software &&
+				!filterOptions.programSkillsTraining.collegePrep &&
+				!filterOptions.programSkillsTraining.stem &&
+				!filterOptions.programSkillsTraining.webDevelopment &&
+				!filterOptions.programSkillsTraining.socialConnections &&
+				!filterOptions.programSkillsTraining.other)) {
+			filterOptions.programSkillsTraining = undefined;
 			return true;
 		}
 
@@ -50,20 +51,20 @@ locationInventoryModule.controller('locationInventoryCtrl', function($scope, $ht
 		if (!locationSkills) {
 			return false;
 		// Check if the location is missing any of the selected skills.
-		} else if ((filterOptions.basic && !locationSkills.basic) ||
-				(filterOptions.microsoftOffice && !locationSkills.microsoftOffice) ||
-				(filterOptions.email && !locationSkills.email) ||
-				(filterOptions.generalWebSearching && !locationSkills.generalWebSearching) ||
-				(filterOptions.resumeDevelopment && !locationSkills.resumeDevelopment) ||
-				(filterOptions.onlineJobSearches && !locationSkills.onlineJobSearches) ||
-				(filterOptions.aisdParentCloud && !locationSkills.aisdParentCloud) ||
-				(filterOptions.hardware && !locationSkills.hardware) ||
-				(filterOptions.software && !locationSkills.software) ||
-				(filterOptions.collegePrep && !locationSkills.collegePrep) ||
-				(filterOptions.stem && !locationSkills.stem) ||
-				(filterOptions.webDevelopment && !locationSkills.webDevelopment) ||
-				(filterOptions.socialConnections && !locationSkills.socialConnections) ||
-				(filterOptions.other && !locationSkills.other)) {
+		} else if ((filterOptions.programSkillsTraining.basic && !locationSkills.basic) ||
+				(filterOptions.programSkillsTraining.microsoftOffice && !locationSkills.microsoftOffice) ||
+				(filterOptions.programSkillsTraining.email && !locationSkills.email) ||
+				(filterOptions.programSkillsTraining.generalWebSearching && !locationSkills.generalWebSearching) ||
+				(filterOptions.programSkillsTraining.resumeDevelopment && !locationSkills.resumeDevelopment) ||
+				(filterOptions.programSkillsTraining.onlineJobSearches && !locationSkills.onlineJobSearches) ||
+				(filterOptions.programSkillsTraining.aisdParentCloud && !locationSkills.aisdParentCloud) ||
+				(filterOptions.programSkillsTraining.hardware && !locationSkills.hardware) ||
+				(filterOptions.programSkillsTraining.software && !locationSkills.software) ||
+				(filterOptions.programSkillsTraining.collegePrep && !locationSkills.collegePrep) ||
+				(filterOptions.programSkillsTraining.stem && !locationSkills.stem) ||
+				(filterOptions.programSkillsTraining.webDevelopment && !locationSkills.webDevelopment) ||
+				(filterOptions.programSkillsTraining.socialConnections && !locationSkills.socialConnections) ||
+				(filterOptions.programSkillsTraining.other && !locationSkills.other)) {
 				return false;
 		}
 		return true;
