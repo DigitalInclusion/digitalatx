@@ -196,6 +196,20 @@
             font-weight: bold;
         }
 
+        .programsSection {
+            overflow: auto;
+        }
+
+        .programsSection .programName {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .programsSection .programBoldField {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -316,39 +330,32 @@
                         </div> <!-- middleSection -->
 
                         <div class="programsSection">
-                            
-                        </div>
-
-
-
-
-                        <!-- Post Content -->
-                        <p><ul>
-                            <li>Contact Info</li>
-                            <li>Street Address: {{location.address}}</li>
-                            <li>Zipcode: {{location.zipcode}}</li>
-                            <li>Hours Available: </li>
-                            <li>Monday: {{location.hours.monday}}</li>
-                            <li>Tuesday: {{location.hours.tuesday}}</li>
-                            <li>Wednesday: {{location.hours.wednesday}}</li>
-                            <li>Thursday: {{location.hours.thurday}}</li>
-                            <li>Friday: {{location.hours.friday}}</li>
-                            <li>Saturday: {{location.hours.saturday}}</li>
-                            <li>Sunday: {{location.hours.sunday}}</li>
-                            <li>Number of Machines: {{location.numberOfMachines}}</li>
-                            <li>Paid Onsite Trainer: {{location.onSiteTrainerPaid}}</li>
-                            <li>Volunteer Onsite Trainer: {{location.onSiteTrainerVolunteer}}</li>
-                            <li>Provided by Organization: {{location.onSiteTrainerProvidedByOrganization}}</li>
-                            <li>Status: {{location.programStatus}}</li>
-                            <li>Public Access Status/Restrictions: {{location.publicAccess}}</li>
-                            <li>Language Capabilities: {{location.languages}}</li>
-                            <li>Assistive Technology Availability: {{location.assistiveTechnology}}</li>
-                            <li>Childcare Availability: {{location.childcare}}</li>
-                            <li>Free Parking: {{location.freeParking}}</li>
-                            <li>Bus stops: {{location.busStops}}</li>
-                          </ul>
-                        </p>
-                    </div>
+                            <h2>Programs at this location</h2>
+                            <div class="programs" ng-repeat="program in location.programs">
+                                <div class="col-lg-4">
+                                    <div class="programName">{{program.programName}}</div>
+                                    <div>Provided by {{program.programProvidedByOrganization}}</div>
+                                    <div>{{program.DatesAndHours}}</div>
+                                    <div>{{program.programCost}}</div>
+                                    <div>{{program.programDescription}}</div>
+                                    <div class="col-sm-6">
+                                        <div class="programBoldField">Clientele served:</div>
+                                        <ul>
+                                            <li ng-repeat="client in program.programClientele">{{client}}</li>
+                                        <ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="programBoldField">Training provided:</div>
+                                        <ul>
+                                            <li ng-repeat="skill in program.programSkillsTraining">{{skill}}</li>
+                                        </ul>
+                                    </div>
+                                    <div>{{program.programWebsite}}</div>
+                                    <div>{{program.programEmail}}</div>
+                                </div>
+                            </div>
+                        </div> <!-- programsSection -->
+                    </div> <!-- well -->
                     <hr>
 
                 <!-- Blog Comments -->
