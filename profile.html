@@ -171,16 +171,28 @@
         }
 
         .topSection {
-
+            overflow: auto;
+            border-bottom: black 2px solid;
         }
 
         .locationPicture {
             width: 50%;
             float: right;
+            padding: 20px;
         }
 
         .numberOfMachines {
             font-size: 20px;
+            font-weight: bold;
+        }
+
+        .middleSection {
+            border-bottom: 2px black solid;
+            overflow: auto;
+        }
+
+        .middleSection .fieldHeader {
+            padding-top: 20px;
             font-weight: bold;
         }
 
@@ -267,6 +279,45 @@
                                 </div>
                             </div>
                         </div> <!-- topSection -->
+
+                        <div class="middleSection">
+                            <div class="col-lg-4">
+                                <div class="fieldHeader">Trainers available</div>
+                                <ul>
+                                    <li>On-site trainer: {{location.onSiteTrainer}}</li>
+                                    <li>Paid: {{location.onSiteTrainerPaid}}</li>
+                                    <li>Volunteer: {{location.onSiteTrainerVolunteer}}</li>
+                                </ul>
+                                <div class="fieldHeader">Childcare availability</div>
+                                <ul>
+                                    <li>{{location.childcare}}</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="fieldHeader">Language capabilities</div>
+                                <ul>
+                                    <li>{{location.languages}}</li>
+                                </ul>
+                                <div class="fieldHeader">Free parking?</div>
+                                <ul>
+                                    <li>{{location.freeParking}}</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="fieldHeader">Assistive technology availability</div>
+                                <ul>
+                                    <li>{{location.assistiveTechnology}}</li>
+                                </ul>
+                                <div class="fieldHeader">Accessible by bus?</div>
+                                <ul>
+                                    <li>{{location.busStops}}</li>
+                                </ul>
+                            </div>
+                        </div> <!-- middleSection -->
+
+                        <div class="programsSection">
+                            
+                        </div>
 
 
 
