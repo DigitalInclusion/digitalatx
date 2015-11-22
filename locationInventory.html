@@ -75,16 +75,19 @@
             overflow: auto;
         }
 
-        .addLocationButton {
+        .addLocationLink {
             position: absolute;
             top: 10px;
             right: 10px;
+            z-index: 9999
+        }
+
+        .addLocationButton {
             border-radius: 6px;
         }
 
         #mainContent .filterArea {
             display: inline-block;
-            position: fixed;
             height: 100%;
             padding: 10px 0 0 10px;
             background-color: #93D4EF;
@@ -108,7 +111,6 @@
             display: inline-block;
             vertical-align: top;
             position: relative;
-            left: 329px;
         }
 
         #mainContent .location {
@@ -180,9 +182,8 @@
         </div> <!-- SECOND HEADER -->
 
         <div id="mainContent">
-            <a href="/addLocation.html"><button class="addLocationButton">Add a Location</button></a>
-
-            <div class="filterArea">
+            <a class="addLocationLink" href="/addLocation.html"><button class="addLocationButton">Add a Location</button></a>
+            <div id="filterArea" class="filterArea col-md-3">
                 <div class="organizationFilterArea">
                     <div class="filterAreaLabel">Filter by Organization</div>
                     <input type="text" ng-model="filterOptions.organization"></input>
@@ -229,7 +230,7 @@
             
             
             
-            <div class="locations">
+            <div class="locations col-md-9">
                 <div class="location" ng-repeat="location in locations" ng-show="offersSkills(location.onSiteTrainerProvidedByOrganization, location.zipcode, location.skills, filterOptions)">
                  <a class="profileLink" href="/profile/name={{location.name}}/siteid={{location._id}}">
                         <div class="locationPictureContainer">
@@ -248,5 +249,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="asset/bootstrap.min.js"></script>
+    <script>
+        // var height = document.getElementById("mainContent").offsetHeight;
+        var height = window.innerHeight - 192 - 29;
+        document.getElementById("filterArea").style.height = height + "px";
+    </script>
   </body>
 </html>
