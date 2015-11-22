@@ -170,6 +170,19 @@
             text-decoration: underline;
         }
 
+        .topSection {
+
+        }
+
+        .locationPicture {
+            width: 50%;
+            float: right;
+        }
+
+        .numberOfMachines {
+            font-size: 20px;
+            font-weight: bold;
+        }
 
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -222,36 +235,70 @@
                     <div class="editLocation">Edit this page</div>
                     <!-- Preview Image -->
                     <div class="well">
-                        <img class="img-responsive" src="{{ location.picture }}" alt="{{ location.name }}">
-                        <hr>
-                    <!-- Post Content -->
-                    <p><ul>
-                        <li>Contact Info</li>
-                        <li>Street Address: {{location.address}}</li>
-                        <li>Zipcode: {{location.zipcode}}</li>
-                        <li>Hours Available: </li>
-                        <li>Monday: {{location.hours.monday}}</li>
-                        <li>Tuesday: {{location.hours.tuesday}}</li>
-                        <li>Wednesday: {{location.hours.wednesday}}</li>
-                        <li>Thursday: {{location.hours.thurday}}</li>
-                        <li>Friday: {{location.hours.friday}}</li>
-                        <li>Saturday: {{location.hours.saturday}}</li>
-                        <li>Sunday: {{location.hours.sunday}}</li>
-                        <li>Number of Machines: {{location.numberOfMachines}}</li>
-                        <li>Paid Onsite Trainer: {{location.onSiteTrainerPaid}}</li>
-                        <li>Volunteer Onsite Trainer: {{location.onSiteTrainerVolunteer}}</li>
-                        <li>Provided by Organization: {{location.onSiteTrainerProvidedByOrganization}}</li>
-                        <li>Status: {{location.programStatus}}</li>
-                        <li>Public Access Status/Restrictions: {{location.publicAccess}}</li>
-                        <li>Language Capabilities: {{location.languages}}</li>
-                        <li>Assistive Technology Availability: {{location.assistiveTechnology}}</li>
-                        <li>Childcare Availability: {{location.childcare}}</li>
-                        <li>Free Parking: {{location.freeParking}}</li>
-                        <li>Bus stops: {{location.busStops}}</li>
-                      </ul>
-                    </p>
-                </div>
-                <hr>
+                        <div class="topSection">
+                            <img class="locationPicture img-responsive" src="{{ location.picture }}" alt="{{ location.name }}">
+
+                            <div class="numberOfMachines">{{location.numberOfMachines}} machines</div>
+                            <div>Provided by {{location.onSiteTrainerProvidedByOrganization}}</div>
+                            <br />
+                            <div ng-switch on="location.publicAccess || '_undefined_'">
+                                <div ng-switch-when="_undefined_"><span class="glyphicon glyphicon-thumbs-up"></span> No access restrictions</div>
+                                <div ng-switch-default>Public access restrictions: {{location.publicAccess}}</div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-sm-1">
+                                    <div>Monday</div>
+                                    <div>Tuesday</div>
+                                    <div>Wednesday</div>
+                                    <div>Thursday</div>
+                                    <div>Friday</div>
+                                    <div>Saturday</div>
+                                    <div>Sunday</div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div>{{location.hours.monday}}</div>
+                                    <div>{{location.hours.tuesday}}</div>
+                                    <div>{{location.hours.wednesday}}</div>
+                                    <div>{{location.hours.thursday}}</div>
+                                    <div>{{location.hours.friday}}</div>
+                                    <div>{{location.hours.saturday}}</div>
+                                    <div>{{location.hours.sunday}}</div>
+                                </div>
+                            </div>
+                        </div> <!-- topSection -->
+
+
+
+
+                        <!-- Post Content -->
+                        <p><ul>
+                            <li>Contact Info</li>
+                            <li>Street Address: {{location.address}}</li>
+                            <li>Zipcode: {{location.zipcode}}</li>
+                            <li>Hours Available: </li>
+                            <li>Monday: {{location.hours.monday}}</li>
+                            <li>Tuesday: {{location.hours.tuesday}}</li>
+                            <li>Wednesday: {{location.hours.wednesday}}</li>
+                            <li>Thursday: {{location.hours.thurday}}</li>
+                            <li>Friday: {{location.hours.friday}}</li>
+                            <li>Saturday: {{location.hours.saturday}}</li>
+                            <li>Sunday: {{location.hours.sunday}}</li>
+                            <li>Number of Machines: {{location.numberOfMachines}}</li>
+                            <li>Paid Onsite Trainer: {{location.onSiteTrainerPaid}}</li>
+                            <li>Volunteer Onsite Trainer: {{location.onSiteTrainerVolunteer}}</li>
+                            <li>Provided by Organization: {{location.onSiteTrainerProvidedByOrganization}}</li>
+                            <li>Status: {{location.programStatus}}</li>
+                            <li>Public Access Status/Restrictions: {{location.publicAccess}}</li>
+                            <li>Language Capabilities: {{location.languages}}</li>
+                            <li>Assistive Technology Availability: {{location.assistiveTechnology}}</li>
+                            <li>Childcare Availability: {{location.childcare}}</li>
+                            <li>Free Parking: {{location.freeParking}}</li>
+                            <li>Bus stops: {{location.busStops}}</li>
+                          </ul>
+                        </p>
+                    </div>
+                    <hr>
 
                 <!-- Blog Comments -->
 
