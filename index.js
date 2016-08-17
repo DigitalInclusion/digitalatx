@@ -31,15 +31,16 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use('/', express.static(__dirname));
 app.use('/public/angular_modules', express.static(__dirname + '/public/angular_modules'));
-app.use('/asset',express.static(__dirname + '/public'));
-app.use('/images',express.static(__dirname + '/public/images'));
+app.use('/asset', express.static(__dirname + '/public'));
+app.use('/images', express.static(__dirname + '/public/images'));
+app.use(express.static(__dirname + "/views"));
 
 app.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname,'index.html'));
+  response.sendFile("/index.html");
 });
 
 app.get('/locationInventory.html', function(request, response) {
-  response.sendFile(path.join(__dirname, 'locationInventory.html'));
+  response.sendFile("/locationInventory.html");
 });
 
 app.get('/profile1.html', function(request, response) {
