@@ -1,8 +1,17 @@
-var DB_CONNECTION_STRING = process.env.MONGO_URL;
 var express = require('express');
-var app = express();
 var path = require('path');
 var mongojs = require('mongojs');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+
+var app = express();
+
+var DB_CONNECTION_STRING;
+if (app.get('env') === 'production') {
+  DB_CONNECTION_STRING = process.env.MONGO_URL;
+} else {
+  DB_CONNECTION_STRING = require('./config/setMongoUrl.js');
+}
 var db = mongojs(DB_CONNECTION_STRING, ['locations'], {authMechanism: 'ScramSHA1'});
 
 // FIND LOCATIONS
@@ -55,9 +64,6 @@ app.get('/profile2.html', function(request, response) {
 app.get('/addLocation.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'addLocation.html'));
 });
-
-var bodyParser = require('body-parser');
-var multer = require('multer');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
