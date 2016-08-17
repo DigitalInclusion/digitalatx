@@ -1,0 +1,196 @@
+body {
+    color: #005581;
+    font-family:arial;
+    padding:0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.mainHeader {
+    
+}
+
+.decaBanner {
+    width: 100%;
+}
+
+.logoContainer {
+    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    display: inline;
+
+}
+
+.logoLink {
+    height: 70px;
+}
+
+.logo {
+    height: 70px;
+}
+
+.title {
+    display: inline;
+    font-size: 35px;
+    line-height: 35px;
+    float: left;
+    padding-top: 5px;
+    padding-left: 15px;
+    max-width: 70%;
+}
+
+.loginContainer {
+    padding: 10px 10px 0 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.loginButton {
+    padding: 5px 12px;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.secondHeader {
+    height: 30px;
+    background-color: #27AAE0;
+    font-size: 18px;
+}
+
+.secondHeaderLink {
+    float: left;
+    padding-top: 4px;
+    padding-left: 50px;
+}
+
+.secondHeaderLink a {
+    color: white;
+}
+
+.homeLinkContainer {
+    position: relative;
+    padding-right: 20%;
+}
+
+.labProfilesLinkContainer {
+    position: relative;
+    padding-right: 10%;
+}
+
+.storytellingProfilesLinkContainer {
+    position: relative;
+}
+.verticalBanner {
+  position:absolute;
+  top:0;
+  left:100px;
+  background-color:#27AAE0;
+}
+
+#bodyTitle {
+    display: inline-block;
+    color: #005581;
+    font: arial;
+    font-size: 35px;
+    line-height: 35px;
+    float: left;
+    padding-top: 25px;
+    padding-left: 35px;
+}
+
+#bodyText1 {
+    display:inline-block;
+    color: #005581;
+    font: arial;
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 35px;
+}
+
+
+.introParagraph{
+   display:inline-block;
+   vertical-align: top;
+   float:left;
+}
+
+.imgContainer{
+   display:inline-block;
+   vertical-align: top;   
+   float:right;       
+}
+
+#mainContent {
+    width: 100%;
+    overflow: auto;
+    background-image: url("/images/DECABackground.jpg");
+    background-size: cover;
+}
+
+.locationName {
+    display: inline-block;
+}
+
+.lastSync {
+    display: inline;
+    float: right;
+    padding-top: 30px;
+}
+
+.locationAddress {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.editLocation {
+    display: inline-block;
+    float: right;
+    text-decoration: underline;
+}
+
+.topSection {
+    overflow: auto;
+    border-bottom: black 2px solid;
+}
+
+.locationPicture {
+    width: 50%;
+    float: right;
+    padding: 20px;
+}
+
+.numberOfMachines {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.middleSection {
+    border-bottom: 2px black solid;
+    overflow: auto;
+}
+
+.middleSection .fieldHeader {
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.programsSection {
+    overflow: auto;
+}
+
+.programsSection .programName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.programsSection .programBoldField {
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}

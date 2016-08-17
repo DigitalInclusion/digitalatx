@@ -1,0 +1,158 @@
+body {
+    color: #005581;
+    font-family:arial;
+    padding:0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.decaBanner {
+    width: 100%;
+}
+
+.logoContainer {
+    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    display: inline;
+
+}
+
+.logoLink {
+    height: 70px;
+}
+
+.logo {
+    height: 70px;
+}
+
+.title {
+    display: inline;
+    font-size: 35px;
+    line-height: 35px;
+    float: left;
+    padding-top: 5px;
+    padding-left: 15px;
+    max-width: 70%;
+}
+
+.loginContainer {
+    padding: 10px 10px 0 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.loginButton {
+    padding: 5px 12px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.secondHeader {
+    height: 30px;
+    background-color: #27AAE0;
+    font-size: 18px;
+}
+
+.secondHeaderLink {
+    float: left;
+    padding-top: 4px;
+    padding-left: 50px;
+}
+
+.secondHeaderLink a {
+    color: white;
+}
+
+.homeLinkContainer {
+    position: relative;
+    padding-right: 20%;
+}
+
+.labProfilesLinkContainer {
+    position: relative;
+    padding-right: 10%;
+}
+
+.storytellingProfilesLinkContainer {
+    position: relative;
+}
+
+.verticalBanner {
+  position:ablute;
+  top:0;
+  left:100px;
+  background-color:#27AAE0;
+}
+
+#bodyTitle {
+    display: inline-block;
+    color: #005581;
+    font: arial;
+    font-size: 35px;
+    line-height: 35px;
+    float: left;
+    padding-top: 25px;
+    padding-left: 35px;
+}
+
+#bodyText1 {
+    display:inline-block;
+    color: #005581;
+    font: arial;
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 35px;
+}
+
+
+.introParagraph{
+    display:inline-block;
+    vertical-align: top;
+    float:left;
+}
+
+.imgContainer{
+    display:inline-block;
+    vertical-align: top;   
+    float:right;       
+}
+
+#mainContent {
+    width: 100%;
+    overflow: auto;
+    background-image: url("/images/DECABackground.jpg");
+    background-size: cover;
+}
+
+.simple-form {
+    padding-left: 15px;
+}
+
+#locationFields {
+    width: 50%;
+    float: left;
+}
+
+#programFields {
+    width: 50%;
+    float: left;
+}
+
+.fieldLabel {
+    padding-top: 10px;
+}
+
+.fieldInput {
+    border-color: #005581;
+    border-radius: 8px;
+    border-width: 1px;
+}
+
+.submitButton {
+    margin-top: 50px;
+}
