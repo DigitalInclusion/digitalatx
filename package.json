@@ -4,14 +4,17 @@
   "description": "A web-based tool for knowledge sharing and creating an inventory of assets for digital inclusion programming in Austin.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha"
   },
   "dependencies": {
     "angular": "^1.3.16",
     "body-parser": "^1.13.1",
     "express": "~4.9.x",
+    "mocha": "^3.0.2",
     "mongojs": "^1.4.x",
-    "multer": "^0.1.8"
+    "multer": "^0.1.8",
+    "supertest": "^2.0.0"
   },
   "engines": {
     "node": "0.12.2"
