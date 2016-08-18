@@ -1,24 +1,6 @@
 body {
-    color: #005581;
     font-family:arial;
     padding:0;
-}
-
-.container-fluid {
-    padding: 0;
-}
-
-.decaBanner {
-    width: 100%;
-}
-
-.logoContainer {
-    height: 70px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    display: inline;
-
 }
 
 .logoLink {
@@ -39,51 +21,8 @@ body {
     max-width: 70%;
 }
 
-.loginContainer {
-    padding: 10px 10px 0 0;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.loginButton {
-    padding: 5px 12px;
-    background-color: white;
-    border-radius: 6px;
-}
-
-.secondHeader {
-    height: 30px;
-    background-color: #27AAE0;
-    font-size: 18px;
-}
-
-.secondHeaderLink {
-    float: left;
-    padding-top: 4px;
-    padding-left: 50px;
-}
-
-.secondHeaderLink a {
-    color: white;
-}
-
-.homeLinkContainer {
-    position: relative;
-    padding-right: 20%;
-}
-
-.labProfilesLinkContainer {
-    position: relative;
-    padding-right: 10%;
-}
-
-.storytellingProfilesLinkContainer {
-    position: relative;
-}
-
 .verticalBanner {
-  position:ablute;
+  position:absolute;
   top:0;
   left:100px;
   background-color:#27AAE0;
