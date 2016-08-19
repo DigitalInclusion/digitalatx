@@ -26,7 +26,6 @@ db.locations.find(function(err, doc) {
   }
 });
 
-
 app.set('port', (process.env.PORT || 5000));
 
 app.use('/', express.static(__dirname));
@@ -34,6 +33,10 @@ app.use('/public/angular_modules', express.static(__dirname + '/public/angular_m
 app.use('/asset', express.static(__dirname + '/public'));
 app.use('/images', express.static(__dirname + '/public/images'));
 app.use(express.static(__dirname + "/views"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(multer());
 
 app.get('/', function(request, response) {
   response.sendFile("/index.html");
@@ -65,10 +68,6 @@ app.get('/profile2.html', function(request, response) {
 app.get('/addLocation.html', function(request, response) {
   response.sendFile(path.join(__dirname, 'addLocation.html'));
 });
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(multer());
 
 app.post('/addLocation', function(request, response) {
   console.log('ADD LOCATION POST SUCCESSFUL');

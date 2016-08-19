@@ -1,13 +1,3 @@
-body {
-    background-image: url("images/DECABackground.jpg");
-    background-size: cover;
-}
-
-#mainContent {
-    width: 100%;
-    overflow: auto;
-}
-
 .simple-form {
     padding-left: 15px;
 }

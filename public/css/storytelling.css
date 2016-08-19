@@ -48,7 +48,6 @@ body {
     padding-left: 35px;
 }
 
-
 .introParagraph{
     display:inline-block;
     vertical-align: top;
@@ -59,13 +58,6 @@ body {
     display:inline-block;
     vertical-align: top;   
     float:right;       
-}
-
-#mainContent {
-    width: 100%;
-    overflow: auto;
-    background-image: url("/images/DECABackground.jpg");
-    background-size: cover;
 }
 
 .simple-form {

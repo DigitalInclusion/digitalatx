@@ -61,13 +61,6 @@ body {
    float:right;       
 }
 
-#mainContent {
-    width: 100%;
-    overflow: auto;
-    background-image: url("/images/DECABackground.jpg");
-    background-size: cover;
-}
-
 .locationName {
     display: inline-block;
 }

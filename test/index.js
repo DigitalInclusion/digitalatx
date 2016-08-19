@@ -39,7 +39,7 @@ describe("get pages", function() {
             .end(done);
     });
 
-    it("gets storytelling", function(done) {
+    it("gets storytelling page", function(done) {
         supertest(app)
             .get("/storytelling.html")
             .set("Accept", "text/html")
