@@ -8,6 +8,8 @@ var flash = require("connect-flash");
 var passport = require("passport");
 var session = require("express-session");
 
+var User = require("./models/user");
+
 var app = express();
 
 var DB_CONNECTION_STRING;
@@ -16,7 +18,7 @@ if (app.get("env") === "development") {
 } else {
   DB_CONNECTION_STRING = process.env.MONGO_URL;
 }
-var db = mongojs(DB_CONNECTION_STRING, ['locations']);
+var db = mongojs(DB_CONNECTION_STRING, ["locations", "users"]);
 
 // FIND LOCATIONS
 db.locations.find(function(err, doc) {
@@ -29,8 +31,21 @@ db.locations.find(function(err, doc) {
     console.log('NO LOCATIONS!');
   }
 });
+db.users.find(function(err, doc) {
+  if (err) {
+    console.log(err);
+  }
+  if (doc) {
+    console.log("users present");
+    console.log(doc);
+  } else {
+    console.log("NO USERS!");
+  }
+});
 
 app.set('port', (process.env.PORT || 5000));
+
+app.set("view engine", "ejs");
 
 app.use('/', express.static(__dirname));
 app.use('/public/angular_modules', express.static(__dirname + '/public/angular_modules'));
@@ -54,6 +69,35 @@ app.use(passport.session());
 app.get('/', function(request, response) {
   response.sendFile("/index.html");
 });
+
+app.get("/signup", function(req, res) {
+  res.render("signup");
+});
+
+app.post("/signup", function(req, res, next) {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  User.findOne({ username: username }, function(err, user) {
+    if (err) { return next(err); }
+    if (user) {
+      req.flash("error", "User already exists");
+      return res.redirect("/signup");
+    }
+
+    var newUser = new User({
+      username: username,
+      password: password
+    });
+    newUser.save(next);
+  });
+}, passport.authenticate("login", 
+    {
+      successRedirect: "/",
+      failureRedirect: "/signup",
+      failureFlash: true
+    }
+));
 
 app.get('/locationInventory.html', function(request, response) {
   response.sendFile("/locationInventory.html");
