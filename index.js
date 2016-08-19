@@ -1,18 +1,22 @@
-var express = require('express');
-var path = require('path');
-var mongojs = require('mongojs');
-var bodyParser = require('body-parser');
-var multer = require('multer');
+var express = require("express");
+var path = require("path");
+var mongojs = require("mongojs");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var multer = require("multer");
+var flash = require("connect-flash");
+var passport = require("passport");
+var session = require("express-session");
 
 var app = express();
 
 var DB_CONNECTION_STRING;
-if (app.get('env') === 'development') {
+if (app.get("env") === "development") {
   DB_CONNECTION_STRING = require('./config/setMongoUrl.js');
 } else {
   DB_CONNECTION_STRING = process.env.MONGO_URL;
 }
-var db = mongojs(DB_CONNECTION_STRING, ['locations'], {authMechanism: 'ScramSHA1'});
+var db = mongojs(DB_CONNECTION_STRING, ['locations']);
 
 // FIND LOCATIONS
 db.locations.find(function(err, doc) {
@@ -36,7 +40,16 @@ app.use(express.static(__dirname + "/views"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 app.use(multer());
+app.use(session({
+  secret: require("./config/sessionSecret.js"),
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', function(request, response) {
   response.sendFile("/index.html");
