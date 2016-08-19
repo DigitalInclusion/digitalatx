@@ -7,10 +7,10 @@ var multer = require('multer');
 var app = express();
 
 var DB_CONNECTION_STRING;
-if (app.get('env') === 'production') {
-  DB_CONNECTION_STRING = process.env.MONGO_URL;
-} else {
+if (app.get('env') === 'development') {
   DB_CONNECTION_STRING = require('./config/setMongoUrl.js');
+} else {
+  DB_CONNECTION_STRING = process.env.MONGO_URL;
 }
 var db = mongojs(DB_CONNECTION_STRING, ['locations'], {authMechanism: 'ScramSHA1'});
 
