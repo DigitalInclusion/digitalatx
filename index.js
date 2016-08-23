@@ -60,7 +60,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(multer());
 app.use(session({
-  secret: require("./config/sessionSecret.js"),
+  // secret: require("./config/sessionSecret.js"),
   resave: true,
   saveUninitialized: true
 }));
