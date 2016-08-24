@@ -61,14 +61,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(multer());
-app.use(session({
+// app.use(session({
   // secret: require("./config/sessionSecret.js"),
-  resave: true,
-  saveUninitialized: true
-}));
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
+  // resave: true,
+  // saveUninitialized: true
+// }));
+// app.use(flash());
+// app.use(passport.initialize());
+// app.use(passport.session());
 // LOGIN
 // app.use(function(req, res, next) {
 //   res.locals.currentUser = req.user;
