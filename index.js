@@ -9,7 +9,8 @@ var passport = require("passport");
 var session = require("express-session");
 
 var User = require("./models/user");
-var setUpPassport = require("./setupPassport");
+// FOR LOGIN
+// var setUpPassport = require("./setupPassport");
 
 var app = express();
 
@@ -20,7 +21,8 @@ if (app.get("env") === "development") {
   DB_CONNECTION_STRING = process.env.MONGO_URL;
 }
 var db = mongojs(DB_CONNECTION_STRING, ["locations", "users"]);
-setUpPassport();
+// LOGIN
+// setUpPassport();
 
 // FIND LOCATIONS
 db.locations.find(function(err, doc) {
@@ -67,12 +69,13 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(function(req, res, next) {
-  res.locals.currentUser = req.user;
-  res.locals.errors = req.flash("error");
-  res.locals.infos = req.flash("info");
-  next();
-});
+// LOGIN
+// app.use(function(req, res, next) {
+//   res.locals.currentUser = req.user;
+//   res.locals.errors = req.flash("error");
+//   res.locals.infos = req.flash("info");
+//   next();
+// });
 
 app.get('/', function(request, response) {
   response.sendFile("/index.html");
